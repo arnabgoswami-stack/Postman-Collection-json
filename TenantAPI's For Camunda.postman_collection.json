@@ -1,0 +1,630 @@
+{
+  "info": {
+    "_postman_id": "0fdecf6b-4281-45e7-86eb-6104f864c471",
+    "name": "TenantAPI's For Camunda",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "49422711",
+    "_collection_link": "https://go.postman.co/collection/49422711-0fdecf6b-4281-45e7-86eb-6104f864c471?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Create Tenant",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJhZ2VuY3lJZCI6IjMwMDQiLCJ1c2VyTmFtZSI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsInRva2VuVHlwZSI6IkFwcGxpY2F0aW9uX1Rva2VuIiwidXNlcklkIjoiQWdlbmN5X1VzZXItNSIsInN1YiI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsImlhdCI6MTc2MzAyNzU1NiwiZXhwIjoxNzYzMDQxOTU2fQ.MT36VdvyfzaHHaS2rnd0-PxXsxEI7MGoZpx4K5u0AHy40KW1YL9t5r9G6tDiC7Z57LOtmeJTa0KoDgmzKgMo0w",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"tenantId\": \"tenant121\",\r\n  \"name\": \"Tenant 121\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credOps-api/bpmn/tenants/create",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "bpmn",
+            "tenants",
+            "create"
+          ]
+        },
+        "description": "Generated from cURL: curl --location --request POST 'http://localhost:9095/credflow/bpmn/tenants' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n  \"tenantId\": \"tenant-123\",\r\n  \"name\": \"Tenant 123\"\r\n}'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "GetTenantById",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"tenantId\": \"tenant123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credOps-api/bpmn/tenants/get",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "bpmn",
+            "tenants",
+            "get"
+          ]
+        },
+        "description": "Generated from cURL: curl --location --request POST 'http://{{Deployement}}/credOps-api/bpmn/tenants/get' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n    \"tenantId\": \"tenant123\"\r\n}'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "getAllTenants",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://{{Deployement}}/credOps-api/bpmn/tenants/getAllTenants",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "bpmn",
+            "tenants",
+            "getAllTenants"
+          ]
+        },
+        "description": "Generated from cURL: curl --location 'http://localhost:9095/bpmn/users/getAllTenants' \\\r\n--header 'Content-Type: application/json'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "assignGroupToTenant",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"groupId\": \"dataEntry\",\r\n    \"tenantId\": \"tenant122\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credOps-api/bpmn/groups/assignToTenant",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "bpmn",
+            "groups",
+            "assignToTenant"
+          ]
+        },
+        "description": "Generated from cURL: curl --location --request POST 'http://localhost:9095/bpmn/groups/assignToTenant' \\\r\n--header 'Content-Type: application/json' \\\r\n--data-raw '{\r\n    \"groupId\": \"tenant123\",\r\n    \"tenantId\": \"tenant123\"\r\n}'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "deleteTenantById",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credOps-api/bpmn/tenants/delete",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "bpmn",
+            "tenants",
+            "delete"
+          ]
+        },
+        "description": "Generated from cURL: curl --location 'http://{{Deployement}}/credOps-api/bpmn/tenants/delete' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n    \"tenantId\": \"tenant-121\"\r\n}'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "removeUserFromTenant",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"userId\": \"abc\",\n    \"tenantId\": \"tenant122\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credOps-api/bpmn/tenants/removeUserFromTenant",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "bpmn",
+            "tenants",
+            "removeUserFromTenant"
+          ]
+        },
+        "description": "Generated from cURL: curl --location --request POST 'http://localhost:9095/bpmn/users/removeUserFromTenant' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n    \"userId\": \"om\",\r\n    \"tenantId\": \"tenant123\"\r\n}'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "removeGroupFromTenant",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"groupId\": \"abcGroup\",\r\n    \"tenantId\": \"tenant123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credOps-api/bpmn/tenants/removeGroupFromTenant",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "bpmn",
+            "tenants",
+            "removeGroupFromTenant"
+          ]
+        },
+        "description": "Generated from cURL: curl --location --request POST 'http://localhost:9095/bpmn/users/removeGroupFromTenant' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n    \"groupId\": \"dataEntry\",\r\n    \"tenantId\": \"tenant123\"\r\n}'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "Create Tenant copy",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"tenantId\": \"tenant122\",\r\n  \"name\": \"Tenant 122\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credflow/bpmn/tenants",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credflow",
+            "bpmn",
+            "tenants"
+          ]
+        },
+        "description": "Generated from cURL: curl --location --request POST 'http://{{Deployement}}/credOps-api/bpmn/tenants' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n  \"tenantId\": \"tenant-123\",\r\n  \"name\": \"Tenant 123\"\r\n}'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "getTenantbyId Copy",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credflow/bpmn/tenants/get?tenantId=tenant122",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "",
+            "credflow",
+            "bpmn",
+            "tenants",
+            "get"
+          ],
+          "query": [
+            {
+              "key": "tenantId",
+              "value": "tenant122"
+            }
+          ]
+        },
+        "description": "Generated from cURL: curl --location 'http://{{Deployement}}/credOps-api/bpmn/tenants/get' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n    \"tenantId\": \"tenant-121\"\r\n}'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "getAllTenants Copy",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://{{Deployement}}/credflow/bpmn/tenants/getAllTenants",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credflow",
+            "bpmn",
+            "tenants",
+            "getAllTenants"
+          ]
+        },
+        "description": "Generated from cURL: curl --location 'http://localhost:9095/bpmn/users/getAllTenants' \\\r\n--header 'Content-Type: application/json'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "deleteTenantById Copy",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credflow/bpmn/tenants/delete?tenantId=tenant122",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credflow",
+            "bpmn",
+            "tenants",
+            "delete"
+          ],
+          "query": [
+            {
+              "key": "tenantId",
+              "value": "tenant122"
+            }
+          ]
+        },
+        "description": "Generated from cURL: curl --location 'http://{{Deployement}}/credOps-api/bpmn/tenants/delete' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n    \"tenantId\": \"tenant-121\"\r\n}'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "removeUserFromTenant Copy",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"userId\": \"xyz\",\n    \"tenantId\": \"tenant123\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credflow/bpmn/tenants/removeUserFromTenant",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credflow",
+            "bpmn",
+            "tenants",
+            "removeUserFromTenant"
+          ]
+        },
+        "description": "Generated from cURL: curl --location --request POST 'http://localhost:9095/bpmn/users/removeUserFromTenant' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n    \"userId\": \"om\",\r\n    \"tenantId\": \"tenant123\"\r\n}'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "removeGroupFromTenant Copy",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"groupId\": \"abcGroup\",\r\n    \"tenantId\": \"tenant123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credflow/bpmn/tenants/removeGroupFromTenant",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credflow",
+            "bpmn",
+            "tenants",
+            "removeGroupFromTenant"
+          ]
+        },
+        "description": "Generated from cURL: curl --location --request POST 'http://localhost:9095/bpmn/users/removeGroupFromTenant' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n    \"groupId\": \"dataEntry\",\r\n    \"tenantId\": \"tenant123\"\r\n}'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "DeployTenantSpecific1",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"tenantId\": \"tenant123\",\r\n  \"deploymentName\": \"TenantSpecific\",\r\n  \"resourceName\": \"Trial_1.bpmn\",\r\n  \"bpmnXml\": \"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n<bpmn:definitions xmlns:bpmn=\\\"http://www.omg.org/spec/BPMN/20100524/MODEL\\\" xmlns:bpmndi=\\\"http://www.omg.org/spec/BPMN/20100524/DI\\\" xmlns:dc=\\\"http://www.omg.org/spec/DD/20100524/DC\\\" xmlns:camunda=\\\"http://camunda.org/schema/1.0/bpmn\\\" xmlns:di=\\\"http://www.omg.org/spec/DD/20100524/DI\\\" xmlns:modeler=\\\"http://camunda.org/schema/modeler/1.0\\\" id=\\\"Definitions_0tghu9p\\\" targetNamespace=\\\"http://bpmn.io/schema/bpmn\\\" exporter=\\\"Camunda Modeler\\\" exporterVersion=\\\"5.39.0\\\" modeler:executionPlatform=\\\"Camunda Platform\\\" modeler:executionPlatformVersion=\\\"7.23.0\\\">\\n  <bpmn:process id=\\\"Process_1t2wr0j\\\" name=\\\"Trial1\\\" isExecutable=\\\"true\\\" camunda:historyTimeToLive=\\\"2\\\">\\n    <bpmn:startEvent id=\\\"StartEvent_1\\\">\\n      <bpmn:outgoing>Flow_1xyut8v</bpmn:outgoing>\\n    </bpmn:startEvent>\\n    <bpmn:sequenceFlow id=\\\"Flow_1xyut8v\\\" sourceRef=\\\"StartEvent_1\\\" targetRef=\\\"Activity_0apuvsn\\\" />\\n    <bpmn:endEvent id=\\\"Event_1pygnno\\\">\\n      <bpmn:incoming>Flow_1hexbq9</bpmn:incoming>\\n    </bpmn:endEvent>\\n    <bpmn:sequenceFlow id=\\\"Flow_1hexbq9\\\" sourceRef=\\\"Activity_0apuvsn\\\" targetRef=\\\"Event_1pygnno\\\" />\\n    <bpmn:userTask id=\\\"Activity_0apuvsn\\\" name=\\\"Tenant 1\\\" camunda:assignee=\\\"xyz\\\" camunda:candidateGroups=\\\"\\\">\\n      <bpmn:extensionElements>\\n        <camunda:formData>\\n          <camunda:formField id=\\\"Name\\\" label=\\\"Name\\\" type=\\\"string\\\" />\\n        </camunda:formData>\\n      </bpmn:extensionElements>\\n      <bpmn:incoming>Flow_1xyut8v</bpmn:incoming>\\n      <bpmn:outgoing>Flow_1hexbq9</bpmn:outgoing>\\n    </bpmn:userTask>\\n  </bpmn:process>\\n  <bpmndi:BPMNDiagram id=\\\"BPMNDiagram_1\\\">\\n    <bpmndi:BPMNPlane id=\\\"BPMNPlane_1\\\" bpmnElement=\\\"Process_1t2wr0j\\\">\\n      <bpmndi:BPMNShape id=\\\"StartEvent_1_di\\\" bpmnElement=\\\"StartEvent_1\\\">\\n        <dc:Bounds x=\\\"182\\\" y=\\\"82\\\" width=\\\"36\\\" height=\\\"36\\\" />\\n      </bpmndi:BPMNShape>\\n      <bpmndi:BPMNShape id=\\\"Event_1pygnno_di\\\" bpmnElement=\\\"Event_1pygnno\\\">\\n        <dc:Bounds x=\\\"442\\\" y=\\\"82\\\" width=\\\"36\\\" height=\\\"36\\\" />\\n      </bpmndi:BPMNShape>\\n      <bpmndi:BPMNShape id=\\\"Activity_0mvithd_di\\\" bpmnElement=\\\"Activity_0apuvsn\\\">\\n        <dc:Bounds x=\\\"280\\\" y=\\\"60\\\" width=\\\"100\\\" height=\\\"80\\\" />\\n        <bpmndi:BPMNLabel />\\n      </bpmndi:BPMNShape>\\n      <bpmndi:BPMNEdge id=\\\"Flow_1xyut8v_di\\\" bpmnElement=\\\"Flow_1xyut8v\\\">\\n        <di:waypoint x=\\\"218\\\" y=\\\"100\\\" />\\n        <di:waypoint x=\\\"280\\\" y=\\\"100\\\" />\\n      </bpmndi:BPMNEdge>\\n      <bpmndi:BPMNEdge id=\\\"Flow_1hexbq9_di\\\" bpmnElement=\\\"Flow_1hexbq9\\\">\\n        <di:waypoint x=\\\"380\\\" y=\\\"100\\\" />\\n        <di:waypoint x=\\\"442\\\" y=\\\"100\\\" />\\n      </bpmndi:BPMNEdge>\\n    </bpmndi:BPMNPlane>\\n  </bpmndi:BPMNDiagram>\\n</bpmn:definitions>\",\r\n  \"enableDuplicateFiltering\": true\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credOps-api/bpmn/deployments/tenant",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "bpmn",
+            "deployments",
+            "tenant"
+          ]
+        },
+        "description": "Generated from cURL: curl --location 'http://{{Deployement}}/credOps-api/bpmn/deployments/tenant' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n  \"tenantId\": \"tenant123\",\r\n  \"deploymentName\": \"TenantSpecific\",\r\n  \"resourceName\": \"Trial_1.bpmn\",\r\n  \"bpmnXml\": \"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n<bpmn:definitions xmlns:bpmn=\\\"http://www.omg.org/spec/BPMN/20100524/MODEL\\\" id=\\\"Defs_1\\\" targetNamespace=\\\"http://bpmn.io/schema/bpmn\\\">\\n  <bpmn:process id=\\\"Process_1t2wr0j\\\" name=\\\"Trial_1\\\" isExecutable=\\\"true\\\" camunda:historyTimeToLive=\\\"1\\\">\\n    <bpmn:startEvent id=\\\"StartEvent_1\\\">\\n      <bpmn:outgoing>Flow_1xyut8v</bpmn:outgoing>\\n    </bpmn:startEvent>\\n    <bpmn:sequenceFlow id=\\\"Flow_1xyut8v\\\" sourceRef=\\\"StartEvent_1\\\" targetRef=\\\"Activity_0apuvsn\\\" />\\n    <bpmn:endEvent id=\\\"Event_1pygnno\\\">\\n      <bpmn:incoming>Flow_1hexbq9</bpmn:incoming>\\n    </bpmn:endEvent>\\n    <bpmn:sequenceFlow id=\\\"Flow_1hexbq9\\\" sourceRef=\\\"Activity_0apuvsn\\\" targetRef=\\\"Event_1pygnno\\\" />\\n    <bpmn:userTask id=\\\"Activity_0apuvsn\\\" name=\\\"Tenant 1\\\" camunda:assignee=\\\"xyz\\\" camunda:candidateGroups=\\\"\\\">\\n      <bpmn:extensionElements>\\n        <camunda:formData>\\n          <camunda:formField id=\\\"Name\\\" label=\\\"Name\\\" type=\\\"string\\\" />\\n        </camunda:formData>\\n      </bpmn:extensionElements>\\n      <bpmn:incoming>Flow_1xyut8v</bpmn:incoming>\\n      <bpmn:outgoing>Flow_1hexbq9</bpmn:outgoing>\\n    </bpmn:userTask>\\n  </bpmn:process>\\n  <bpmndi:BPMNDiagram id=\\\"BPMNDiagram_1\\\">\\n    <bpmndi:BPMNPlane id=\\\"BPMNPlane_1\\\" bpmnElement=\\\"Process_1t2wr0j\\\">\\n      <bpmndi:BPMNShape id=\\\"StartEvent_1_di\\\" bpmnElement=\\\"StartEvent_1\\\">\\n        <dc:Bounds x=\\\"182\\\" y=\\\"82\\\" width=\\\"36\\\" height=\\\"36\\\" />\\n      </bpmndi:BPMNShape>\\n      <bpmndi:BPMNShape id=\\\"Event_1pygnno_di\\\" bpmnElement=\\\"Event_1pygnno\\\">\\n        <dc:Bounds x=\\\"442\\\" y=\\\"82\\\" width=\\\"36\\\" height=\\\"36\\\" />\\n      </bpmndi:BPMNShape>\\n      <bpmndi:BPMNShape id=\\\"Activity_0mvithd_di\\\" bpmnElement=\\\"Activity_0apuvsn\\\">\\n        <dc:Bounds x=\\\"280\\\" y=\\\"60\\\" width=\\\"100\\\" height=\\\"80\\\" />\\n        <bpmndi:BPMNLabel />\\n      </bpmndi:BPMNShape>\\n      <bpmndi:BPMNEdge id=\\\"Flow_1xyut8v_di\\\" bpmnElement=\\\"Flow_1xyut8v\\\">\\n        <di:waypoint x=\\\"218\\\" y=\\\"100\\\" />\\n        <di:waypoint x=\\\"280\\\" y=\\\"100\\\" />\\n      </bpmndi:BPMNEdge>\\n      <bpmndi:BPMNEdge id=\\\"Flow_1hexbq9_di\\\" bpmnElement=\\\"Flow_1hexbq9\\\">\\n        <di:waypoint x=\\\"380\\\" y=\\\"100\\\" />\\n        <di:waypoint x=\\\"442\\\" y=\\\"100\\\" />\\n      </bpmndi:BPMNEdge>\\n    </bpmndi:BPMNPlane>\\n  </bpmndi:BPMNDiagram>\\n</bpmn:definitions>\",\r\n  \"enableDuplicateFiltering\": true\r\n}'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "DeployTenantSpecific1 Copy",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"tenantId\": \"tenant122\",\r\n  \"deploymentName\": \"TenantSpecific\",\r\n  \"resourceName\": \"Trial_2.bpmn\",\r\n  \"bpmnXml\": \"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n<bpmn:definitions xmlns:bpmn=\\\"http://www.omg.org/spec/BPMN/20100524/MODEL\\\" xmlns:bpmndi=\\\"http://www.omg.org/spec/BPMN/20100524/DI\\\" xmlns:dc=\\\"http://www.omg.org/spec/DD/20100524/DC\\\" xmlns:camunda=\\\"http://camunda.org/schema/1.0/bpmn\\\" xmlns:di=\\\"http://www.omg.org/spec/DD/20100524/DI\\\" xmlns:modeler=\\\"http://camunda.org/schema/modeler/1.0\\\" id=\\\"Definitions_012yw2n\\\" targetNamespace=\\\"http://bpmn.io/schema/bpmn\\\" exporter=\\\"Camunda Modeler\\\" exporterVersion=\\\"5.39.0\\\" modeler:executionPlatform=\\\"Camunda Platform\\\" modeler:executionPlatformVersion=\\\"7.23.0\\\">\\n  <bpmn:process id=\\\"Process_0gsu629\\\" name=\\\"Trial2\\\" isExecutable=\\\"true\\\" camunda:historyTimeToLive=\\\"2\\\">\\n    <bpmn:startEvent id=\\\"StartEvent_1\\\">\\n      <bpmn:outgoing>Flow_0wjiqxu</bpmn:outgoing>\\n    </bpmn:startEvent>\\n    <bpmn:sequenceFlow id=\\\"Flow_0wjiqxu\\\" sourceRef=\\\"StartEvent_1\\\" targetRef=\\\"Activity_1qxq4x9\\\" />\\n    <bpmn:endEvent id=\\\"Event_0vlhio7\\\">\\n      <bpmn:incoming>Flow_0j48h68</bpmn:incoming>\\n    </bpmn:endEvent>\\n    <bpmn:sequenceFlow id=\\\"Flow_0j48h68\\\" sourceRef=\\\"Activity_1qxq4x9\\\" targetRef=\\\"Event_0vlhio7\\\" />\\n    <bpmn:userTask id=\\\"Activity_1qxq4x9\\\" name=\\\"Tenant 2\\\" camunda:assignee=\\\"xyz\\\" camunda:candidateGroups=\\\"\\\">\\n      <bpmn:extensionElements>\\n        <camunda:formData>\\n          <camunda:formField id=\\\"name\\\" label=\\\"Name\\\" type=\\\"string\\\" />\\n        </camunda:formData>\\n      </bpmn:extensionElements>\\n      <bpmn:incoming>Flow_0wjiqxu</bpmn:incoming>\\n      <bpmn:outgoing>Flow_0j48h68</bpmn:outgoing>\\n    </bpmn:userTask>\\n  </bpmn:process>\\n  <bpmndi:BPMNDiagram id=\\\"BPMNDiagram_1\\\">\\n    <bpmndi:BPMNPlane id=\\\"BPMNPlane_1\\\" bpmnElement=\\\"Process_0gsu629\\\">\\n      <bpmndi:BPMNShape id=\\\"StartEvent_1_di\\\" bpmnElement=\\\"StartEvent_1\\\">\\n        <dc:Bounds x=\\\"182\\\" y=\\\"102\\\" width=\\\"36\\\" height=\\\"36\\\" />\\n      </bpmndi:BPMNShape>\\n      <bpmndi:BPMNShape id=\\\"Event_0vlhio7_di\\\" bpmnElement=\\\"Event_0vlhio7\\\">\\n        <dc:Bounds x=\\\"422\\\" y=\\\"102\\\" width=\\\"36\\\" height=\\\"36\\\" />\\n      </bpmndi:BPMNShape>\\n      <bpmndi:BPMNShape id=\\\"Activity_01n7mk0_di\\\" bpmnElement=\\\"Activity_1qxq4x9\\\">\\n        <dc:Bounds x=\\\"270\\\" y=\\\"80\\\" width=\\\"100\\\" height=\\\"80\\\" />\\n      </bpmndi:BPMNShape>\\n      <bpmndi:BPMNEdge id=\\\"Flow_0wjiqxu_di\\\" bpmnElement=\\\"Flow_0wjiqxu\\\">\\n        <di:waypoint x=\\\"218\\\" y=\\\"120\\\" />\\n        <di:waypoint x=\\\"270\\\" y=\\\"120\\\" />\\n      </bpmndi:BPMNEdge>\\n      <bpmndi:BPMNEdge id=\\\"Flow_0j48h68_di\\\" bpmnElement=\\\"Flow_0j48h68\\\">\\n        <di:waypoint x=\\\"370\\\" y=\\\"120\\\" />\\n        <di:waypoint x=\\\"422\\\" y=\\\"120\\\" />\\n      </bpmndi:BPMNEdge>\\n    </bpmndi:BPMNPlane>\\n  </bpmndi:BPMNDiagram>\\n</bpmn:definitions>\",\r\n  \"enableDuplicateFiltering\": true\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credOps-api/bpmn/deployments/tenant",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "bpmn",
+            "deployments",
+            "tenant"
+          ]
+        },
+        "description": "Generated from cURL: curl --location 'http://{{Deployement}}/credOps-api/bpmn/deployments/tenant' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n  \"tenantId\": \"tenant123\",\r\n  \"deploymentName\": \"TenantSpecific\",\r\n  \"resourceName\": \"Trial_1.bpmn\",\r\n  \"bpmnXml\": \"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n<bpmn:definitions xmlns:bpmn=\\\"http://www.omg.org/spec/BPMN/20100524/MODEL\\\" id=\\\"Defs_1\\\" targetNamespace=\\\"http://bpmn.io/schema/bpmn\\\">\\n  <bpmn:process id=\\\"Process_1t2wr0j\\\" name=\\\"Trial_1\\\" isExecutable=\\\"true\\\" camunda:historyTimeToLive=\\\"1\\\">\\n    <bpmn:startEvent id=\\\"StartEvent_1\\\">\\n      <bpmn:outgoing>Flow_1xyut8v</bpmn:outgoing>\\n    </bpmn:startEvent>\\n    <bpmn:sequenceFlow id=\\\"Flow_1xyut8v\\\" sourceRef=\\\"StartEvent_1\\\" targetRef=\\\"Activity_0apuvsn\\\" />\\n    <bpmn:endEvent id=\\\"Event_1pygnno\\\">\\n      <bpmn:incoming>Flow_1hexbq9</bpmn:incoming>\\n    </bpmn:endEvent>\\n    <bpmn:sequenceFlow id=\\\"Flow_1hexbq9\\\" sourceRef=\\\"Activity_0apuvsn\\\" targetRef=\\\"Event_1pygnno\\\" />\\n    <bpmn:userTask id=\\\"Activity_0apuvsn\\\" name=\\\"Tenant 1\\\" camunda:assignee=\\\"xyz\\\" camunda:candidateGroups=\\\"\\\">\\n      <bpmn:extensionElements>\\n        <camunda:formData>\\n          <camunda:formField id=\\\"Name\\\" label=\\\"Name\\\" type=\\\"string\\\" />\\n        </camunda:formData>\\n      </bpmn:extensionElements>\\n      <bpmn:incoming>Flow_1xyut8v</bpmn:incoming>\\n      <bpmn:outgoing>Flow_1hexbq9</bpmn:outgoing>\\n    </bpmn:userTask>\\n  </bpmn:process>\\n  <bpmndi:BPMNDiagram id=\\\"BPMNDiagram_1\\\">\\n    <bpmndi:BPMNPlane id=\\\"BPMNPlane_1\\\" bpmnElement=\\\"Process_1t2wr0j\\\">\\n      <bpmndi:BPMNShape id=\\\"StartEvent_1_di\\\" bpmnElement=\\\"StartEvent_1\\\">\\n        <dc:Bounds x=\\\"182\\\" y=\\\"82\\\" width=\\\"36\\\" height=\\\"36\\\" />\\n      </bpmndi:BPMNShape>\\n      <bpmndi:BPMNShape id=\\\"Event_1pygnno_di\\\" bpmnElement=\\\"Event_1pygnno\\\">\\n        <dc:Bounds x=\\\"442\\\" y=\\\"82\\\" width=\\\"36\\\" height=\\\"36\\\" />\\n      </bpmndi:BPMNShape>\\n      <bpmndi:BPMNShape id=\\\"Activity_0mvithd_di\\\" bpmnElement=\\\"Activity_0apuvsn\\\">\\n        <dc:Bounds x=\\\"280\\\" y=\\\"60\\\" width=\\\"100\\\" height=\\\"80\\\" />\\n        <bpmndi:BPMNLabel />\\n      </bpmndi:BPMNShape>\\n      <bpmndi:BPMNEdge id=\\\"Flow_1xyut8v_di\\\" bpmnElement=\\\"Flow_1xyut8v\\\">\\n        <di:waypoint x=\\\"218\\\" y=\\\"100\\\" />\\n        <di:waypoint x=\\\"280\\\" y=\\\"100\\\" />\\n      </bpmndi:BPMNEdge>\\n      <bpmndi:BPMNEdge id=\\\"Flow_1hexbq9_di\\\" bpmnElement=\\\"Flow_1hexbq9\\\">\\n        <di:waypoint x=\\\"380\\\" y=\\\"100\\\" />\\n        <di:waypoint x=\\\"442\\\" y=\\\"100\\\" />\\n      </bpmndi:BPMNEdge>\\n    </bpmndi:BPMNPlane>\\n  </bpmndi:BPMNDiagram>\\n</bpmn:definitions>\",\r\n  \"enableDuplicateFiltering\": true\r\n}'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "http://{{Deployement}}/credOps-api/api/forms/create",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJhZ2VuY3lJZCI6IjMwMDQiLCJ1c2VyTmFtZSI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsInRva2VuVHlwZSI6IkFwcGxpY2F0aW9uX1Rva2VuIiwidXNlcklkIjoiQWdlbmN5X1VzZXItNSIsInN1YiI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsImlhdCI6MTc2MjUxMzU5NiwiZXhwIjoxNzYyNTI3OTk2fQ.0Ux4cZ2anJ1GvwcEDdMmfk0mP9plp-Vk_xNrG0-oxCd1ekqGG2pgtiNC6ku_UfdE1YtiRBaNjI9wOvfK1Qu9tQ"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"formName\": \"Boss\",\n  \"formData\": \"string\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credOps-api/api/forms/create",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "api",
+            "forms",
+            "create"
+          ]
+        },
+        "description": "Generated from cURL: curl --location 'http://{{Deployement}}/credOps-api/api/forms/create' \\\n--header 'Authorization: eyJhbGciOiJIUzUxMiJ9.eyJhZ2VuY3lJZCI6IjMwMDQiLCJ1c2VyTmFtZSI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsInRva2VuVHlwZSI6IkFwcGxpY2F0aW9uX1Rva2VuIiwidXNlcklkIjoiQWdlbmN5X1VzZXItNSIsInN1YiI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsImlhdCI6MTc2MjUxMzU5NiwiZXhwIjoxNzYyNTI3OTk2fQ.0Ux4cZ2anJ1GvwcEDdMmfk0mP9plp-Vk_xNrG0-oxCd1ekqGG2pgtiNC6ku_UfdE1YtiRBaNjI9wOvfK1Qu9tQ' \\\n--header 'Content-Type: application/json' \\\n--data '{\n  \"formName\": \"Boss\",\n  \"formData\": \"string\"\n}'"
+      },
+      "response": []
+    },
+    {
+      "name": "GetTenant",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"tenantId\": \"tenant123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credOps-api/bpmn/tenants/get",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "bpmn",
+            "tenants",
+            "get"
+          ]
+        },
+        "description": "Generated from cURL: curl --location --request POST 'http://{{Deployement}}/credOps-api/bpmn/tenants/get' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n    \"tenantId\": \"tenant123\"\r\n}'\r\n"
+      },
+      "response": []
+    }
+  ]
+}

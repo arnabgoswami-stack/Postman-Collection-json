@@ -1,0 +1,607 @@
+{
+  "info": {
+    "_postman_id": "864dddee-190f-4471-b071-b833ff5537f6",
+    "name": "GroupAPI's for Camunda",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "49422711",
+    "_collection_link": "https://go.postman.co/collection/49422711-864dddee-190f-4471-b071-b833ff5537f6?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get_API_Token",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"userName\":\"vinay.bhadauria@transparencytest.com\",\n    \"password\":\"Test@234\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://dev.credentiai.com/credentia/login",
+          "protocol": "http",
+          "host": [
+            "dev",
+            "credentiai",
+            "com"
+          ],
+          "path": [
+            "credentia",
+            "login"
+          ]
+        },
+        "description": "Generated from cURL: curl --location 'http://dev.credentiai.com/credentia/login' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n    \"userName\":\"vinay.bhadauria@transparencytest.com\",\n    \"password\":\"Test@234\"\n}'"
+      },
+      "response": []
+    },
+    {
+      "name": "createGroup",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJhZ2VuY3lJZCI6IjMwMDQiLCJ1c2VyTmFtZSI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsInRva2VuVHlwZSI6IkFwcGxpY2F0aW9uX1Rva2VuIiwidXNlcklkIjoiQWdlbmN5X1VzZXItNSIsInN1YiI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsImlhdCI6MTc2MzAzMDYwMiwiZXhwIjoxNzYzMDQ1MDAyfQ.bq0hC-pG3eQDfV1vKntC52OhcbRURO-OzCNKQoh1miIYWntc2cIsJbe45nKfRTLfbLI6DuM71It4ftv6DZx9hg",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"groupId\": \"efgGroup\",\r\n    \"groupName\": \"efg member  Group\",\r\n    \"groupType\": \"efg Team\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credOps-api/bpmn/groups/create",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "bpmn",
+            "groups",
+            "create"
+          ]
+        },
+        "description": "Generated from cURL: curl --location --request POST 'http://localhost:9095/bpmn/groups/create' \\\r\n--header 'Content-Type: application/json' \\\r\n--data-raw '{\r\n    \"groupId\": \"tenant123\",\r\n    \"groupName\": \"Tenant 123 Group\",\r\n    \"groupType\": \"tenantGroup\"\r\n}'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "getGroup",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJhZ2VuY3lJZCI6IjMwMDQiLCJ1c2VyTmFtZSI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsInRva2VuVHlwZSI6IkFwcGxpY2F0aW9uX1Rva2VuIiwidXNlcklkIjoiQWdlbmN5X1VzZXItNSIsInN1YiI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsImlhdCI6MTc2MzAyNzU1NiwiZXhwIjoxNzYzMDQxOTU2fQ.MT36VdvyfzaHHaS2rnd0-PxXsxEI7MGoZpx4K5u0AHy40KW1YL9t5r9G6tDiC7Z57LOtmeJTa0KoDgmzKgMo0w",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"groupId\": \"efgGroup\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credOps-api/bpmn/groups/get",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "bpmn",
+            "groups",
+            "get"
+          ]
+        },
+        "description": "Generated from cURL: curl --location --request GET 'http://localhost:9095/bpmn/groups/get?groupId=tenant123' \\\r\n--header 'Content-Type: application/json'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "getAllGroups",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJhZ2VuY3lJZCI6IjMwMDQiLCJ1c2VyTmFtZSI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsInRva2VuVHlwZSI6IkFwcGxpY2F0aW9uX1Rva2VuIiwidXNlcklkIjoiQWdlbmN5X1VzZXItNSIsInN1YiI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsImlhdCI6MTc2MzAyNzU1NiwiZXhwIjoxNzYzMDQxOTU2fQ.MT36VdvyfzaHHaS2rnd0-PxXsxEI7MGoZpx4K5u0AHy40KW1YL9t5r9G6tDiC7Z57LOtmeJTa0KoDgmzKgMo0w",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://{{Deployement}}/credOps-api/bpmn/groups/getAllGroups",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "bpmn",
+            "groups",
+            "getAllGroups"
+          ]
+        },
+        "description": "Generated from cURL: curl --location 'http://localhost:9095/bpmn/users/getAllGroups' \\\r\n--header 'Content-Type: application/json'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "deleteGroup",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJhZ2VuY3lJZCI6IjMwMDQiLCJ1c2VyTmFtZSI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsInRva2VuVHlwZSI6IkFwcGxpY2F0aW9uX1Rva2VuIiwidXNlcklkIjoiQWdlbmN5X1VzZXItNSIsInN1YiI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsImlhdCI6MTc2MzAzMDYwMiwiZXhwIjoxNzYzMDQ1MDAyfQ.bq0hC-pG3eQDfV1vKntC52OhcbRURO-OzCNKQoh1miIYWntc2cIsJbe45nKfRTLfbLI6DuM71It4ftv6DZx9hg",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"groupId\": \"efgGroup\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credOps-api/bpmn/groups/delete",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "bpmn",
+            "groups",
+            "delete"
+          ]
+        },
+        "description": "Generated from cURL: curl --location --request DELETE 'http://localhost:9095/bpmn/groups/delete?groupId=tenant123' \\\r\n--header 'Content-Type: application/json'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "assignUserToGroup",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJhZ2VuY3lJZCI6IjMwMDQiLCJ1c2VyTmFtZSI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsInRva2VuVHlwZSI6IkFwcGxpY2F0aW9uX1Rva2VuIiwidXNlcklkIjoiQWdlbmN5X1VzZXItNSIsInN1YiI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsImlhdCI6MTc2MzAzMDYwMiwiZXhwIjoxNzYzMDQ1MDAyfQ.bq0hC-pG3eQDfV1vKntC52OhcbRURO-OzCNKQoh1miIYWntc2cIsJbe45nKfRTLfbLI6DuM71It4ftv6DZx9hg",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"groupId\": \"dataEntry\",\r\n    \"userId\": \"pqr\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credOps-api/bpmn/groups/assignUserToGroup",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "bpmn",
+            "groups",
+            "assignUserToGroup"
+          ]
+        },
+        "description": "Generated from cURL: curl --location --request POST 'http://localhost:9095/bpmn/groups/assignUserToGroup' \\\r\n--header 'Content-Type: application/json' \\\r\n--data-raw '{\r\n    \"groupId\": \"tenant123\",\r\n    \"userId\": \"user123\"\r\n}'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "assignGroupToTenant",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJhZ2VuY3lJZCI6IjMwMDQiLCJ1c2VyTmFtZSI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsInRva2VuVHlwZSI6IkFwcGxpY2F0aW9uX1Rva2VuIiwidXNlcklkIjoiQWdlbmN5X1VzZXItNSIsInN1YiI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsImlhdCI6MTc2MzAzMDYwMiwiZXhwIjoxNzYzMDQ1MDAyfQ.bq0hC-pG3eQDfV1vKntC52OhcbRURO-OzCNKQoh1miIYWntc2cIsJbe45nKfRTLfbLI6DuM71It4ftv6DZx9hg",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"groupId\": \"abcGroup\",\r\n    \"tenantId\": \"tenant121\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credOps-api/bpmn/groups/assignToTenant",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "bpmn",
+            "groups",
+            "assignToTenant"
+          ]
+        },
+        "description": "Generated from cURL: curl --location --request POST 'http://localhost:9095/bpmn/groups/assignToTenant' \\\r\n--header 'Content-Type: application/json' \\\r\n--data-raw '{\r\n    \"groupId\": \"tenant123\",\r\n    \"tenantId\": \"tenant123\"\r\n}'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "removeUserFromGroup",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJhZ2VuY3lJZCI6IjMwMDQiLCJ1c2VyTmFtZSI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsInRva2VuVHlwZSI6IkFwcGxpY2F0aW9uX1Rva2VuIiwidXNlcklkIjoiQWdlbmN5X1VzZXItNSIsInN1YiI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsImlhdCI6MTc2MzAzMDYwMiwiZXhwIjoxNzYzMDQ1MDAyfQ.bq0hC-pG3eQDfV1vKntC52OhcbRURO-OzCNKQoh1miIYWntc2cIsJbe45nKfRTLfbLI6DuM71It4ftv6DZx9hg",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"userId\": \"abc\",\r\n    \"groupId\": \"abcGroup\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credOps-api/bpmn/groups/removeUserFromGroup",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "bpmn",
+            "groups",
+            "removeUserFromGroup"
+          ]
+        },
+        "description": "Generated from cURL: curl --location --request POST 'http://localhost:9095/bpmn/users/removeUserFromGroup' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n    \"userId\": \"om\",\r\n    \"groupId\": \"dataEntry\"\r\n}'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "createGroup Copy",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"groupId\": \"abcGroup\",\r\n    \"groupName\": \"abc member  Group\",\r\n    \"groupType\": \"abc Team\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credflow/bpmn/groups/create",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credflow",
+            "bpmn",
+            "groups",
+            "create"
+          ]
+        },
+        "description": "Generated from cURL: curl --location --request POST 'http://localhost:9095/bpmn/groups/create' \\\r\n--header 'Content-Type: application/json' \\\r\n--data-raw '{\r\n    \"groupId\": \"tenant123\",\r\n    \"groupName\": \"Tenant 123 Group\",\r\n    \"groupType\": \"tenantGroup\"\r\n}'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "getGroup Copy",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://{{Deployement}}/credflow/bpmn/groups/get?groupId=abcGroup",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credflow",
+            "bpmn",
+            "groups",
+            "get"
+          ],
+          "query": [
+            {
+              "key": "groupId",
+              "value": "abcGroup"
+            }
+          ]
+        },
+        "description": "Generated from cURL: curl --location --request GET 'http://localhost:9095/bpmn/groups/get?groupId=tenant123' \\\r\n--header 'Content-Type: application/json'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "deleteGroup Copy",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://{{Deployement}}/credflow/bpmn/groups/delete?groupId=dataEntryLead",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credflow",
+            "bpmn",
+            "groups",
+            "delete"
+          ],
+          "query": [
+            {
+              "key": "groupId",
+              "value": "dataEntryLead"
+            }
+          ]
+        },
+        "description": "Generated from cURL: curl --location --request DELETE 'http://localhost:9095/bpmn/groups/delete?groupId=tenant123' \\\r\n--header 'Content-Type: application/json'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "getAllGroups Copy",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://{{Deployement}}/credflow/bpmn/groups/getAllGroups",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credflow",
+            "bpmn",
+            "groups",
+            "getAllGroups"
+          ]
+        },
+        "description": "Generated from cURL: curl --location 'http://localhost:9095/bpmn/users/getAllGroups' \\\r\n--header 'Content-Type: application/json'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "assignGroupToTenant Copy",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"groupId\": \"abcGroup\",\r\n    \"tenantId\": \"tenant123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credflow/bpmn/groups/assignToTenant",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credflow",
+            "bpmn",
+            "groups",
+            "assignToTenant"
+          ]
+        },
+        "description": "Generated from cURL: curl --location --request POST 'http://localhost:9095/bpmn/groups/assignToTenant' \\\r\n--header 'Content-Type: application/json' \\\r\n--data-raw '{\r\n    \"groupId\": \"tenant123\",\r\n    \"tenantId\": \"tenant123\"\r\n}'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "assignUserToGroup Copy",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"userId\": \"abc\",\r\n    \"groupId\": \"abcGroup\"\r\n    \r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credflow/bpmn/groups/assignUserToGroup",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credflow",
+            "bpmn",
+            "groups",
+            "assignUserToGroup"
+          ]
+        },
+        "description": "Generated from cURL: curl --location --request POST 'http://localhost:9095/bpmn/groups/assignUserToGroup' \\\r\n--header 'Content-Type: application/json' \\\r\n--data-raw '{\r\n    \"groupId\": \"tenant123\",\r\n    \"userId\": \"user123\"\r\n}'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "removeUserFromGroup Copy",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"userId\": \"abc\",\r\n    \"groupId\": \"abcGroup\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credflow/bpmn/groups/removeUserFromGroup",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credflow",
+            "bpmn",
+            "groups",
+            "removeUserFromGroup"
+          ]
+        },
+        "description": "Generated from cURL: curl --location --request POST 'http://localhost:9095/bpmn/users/removeUserFromGroup' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n    \"userId\": \"om\",\r\n    \"groupId\": \"dataEntry\"\r\n}'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "http://{{Deployement}}/credOps-api/api/forms/create",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJhZ2VuY3lJZCI6IjMwMDQiLCJ1c2VyTmFtZSI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsInRva2VuVHlwZSI6IkFwcGxpY2F0aW9uX1Rva2VuIiwidXNlcklkIjoiQWdlbmN5X1VzZXItNSIsInN1YiI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsImlhdCI6MTc2MjUxMzU5NiwiZXhwIjoxNzYyNTI3OTk2fQ.0Ux4cZ2anJ1GvwcEDdMmfk0mP9plp-Vk_xNrG0-oxCd1ekqGG2pgtiNC6ku_UfdE1YtiRBaNjI9wOvfK1Qu9tQ"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"formName\": \"Boss\",\n  \"formData\": \"string\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credOps-api/api/forms/create",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "api",
+            "forms",
+            "create"
+          ]
+        },
+        "description": "Generated from cURL: curl --location 'http://{{Deployement}}/credOps-api/api/forms/create' \\\n--header 'Authorization: eyJhbGciOiJIUzUxMiJ9.eyJhZ2VuY3lJZCI6IjMwMDQiLCJ1c2VyTmFtZSI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsInRva2VuVHlwZSI6IkFwcGxpY2F0aW9uX1Rva2VuIiwidXNlcklkIjoiQWdlbmN5X1VzZXItNSIsInN1YiI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsImlhdCI6MTc2MjUxMzU5NiwiZXhwIjoxNzYyNTI3OTk2fQ.0Ux4cZ2anJ1GvwcEDdMmfk0mP9plp-Vk_xNrG0-oxCd1ekqGG2pgtiNC6ku_UfdE1YtiRBaNjI9wOvfK1Qu9tQ' \\\n--header 'Content-Type: application/json' \\\n--data '{\n  \"formName\": \"Boss\",\n  \"formData\": \"string\"\n}'"
+      },
+      "response": []
+    }
+  ]
+}

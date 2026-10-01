@@ -1,0 +1,564 @@
+{
+  "info": {
+    "_postman_id": "003c57da-a868-4de6-a477-4ea5f1febb2c",
+    "name": "AgencyReport",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "49422711",
+    "_collection_link": "https://go.postman.co/collection/49422711-003c57da-a868-4de6-a477-4ea5f1febb2c?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "getReportData",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlSWQiOiJSb2xlSWQxIiwiYWdlbmN5SWQiOiIzMDA0IiwidXNlck5hbWUiOiJ2aW5heS5iaGFkYXVyaWFAdHJhbnNwYXJlbmN5dGVzdC5jb20iLCJ0b2tlblR5cGUiOiJBcHBsaWNhdGlvbl9Ub2tlbiIsInVzZXJJZCI6IkFnZW5jeV9Vc2VyLTUiLCJzdWIiOiJ2aW5heS5iaGFkYXVyaWFAdHJhbnNwYXJlbmN5dGVzdC5jb20iLCJpYXQiOjE3NjY1Njg5OTQsImV4cCI6MTc2NjU4MzM5NH0.e4Huq-AujdWKqrmxjHxvfgP2H-vETNZ1sbvyfQ-9RAcs_TEuVQNebnh-1_4gUKQGFx2HCR8pRcd37eoE1m3h8Q",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"caseReferenceNumber\":\"INFO-2510-0110\",\r\n    \"tenantId\":\"2510\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{urlForCredops}}agencies/report/getReportData",
+          "host": [
+            "{{urlForCredops}}agencies"
+          ],
+          "path": [
+            "report",
+            "getReportData"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getCheckFormConfiguration",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlSWQiOiJSb2xlSWQxIiwiYWdlbmN5SWQiOiIzMDA0IiwidXNlck5hbWUiOiJ2aW5heS5iaGFkYXVyaWFAdHJhbnNwYXJlbmN5dGVzdC5jb20iLCJ0b2tlblR5cGUiOiJBcHBsaWNhdGlvbl9Ub2tlbiIsInVzZXJJZCI6IkFnZW5jeV9Vc2VyLTUiLCJzdWIiOiJ2aW5heS5iaGFkYXVyaWFAdHJhbnNwYXJlbmN5dGVzdC5jb20iLCJpYXQiOjE3NjcwMTY4NzgsImV4cCI6MTc2NzAzMTI3OH0.OMSGD8U533i-NDQajGgfNQenG811-taOvhscdiiRGCxUyEmosVGwPSB7sXZJgZAcIeKtANBofVTpiwwkv_vBgA",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"checkId\":\"M8J9FGIJ\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{urlForCredops}}agencies/report/getCheckFormConfiguration",
+          "host": [
+            "{{urlForCredops}}agencies"
+          ],
+          "path": [
+            "report",
+            "getCheckFormConfiguration"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://your-api-url/createCompanyLocationsFromExcelImport",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer your_token"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "type": "file",
+              "key": "documentZip",
+              "src": "/path/to/your/file.zip"
+            },
+            {
+              "type": "text",
+              "key": "companyLocations",
+              "value": "'[{\r\n    \"locationId\": 1,\r\n    \"companyId\": 101,\r\n    \"locationName\": \"Mumbai - Malad\",\r\n    \"registrationDate\": \"10-10-2025\",\r\n    \"address\": \"#1-India\",\r\n    \"country\": \"India\",\r\n    \"state\": \"Maharashtra\",\r\n    \"city\": \"Mumbai\",\r\n    \"pinPostalCode\": \"400001\",\r\n    \"businessStatus\": \"Active\",\r\n    \"headquarterLocation\": true,\r\n    \"recordReviewed\": \"Yes\",\r\n    \"authenticityStatus\": \"Verified\",\r\n    \"proofOfVerification\": \"proof.jpg\",\r\n    \"verifiedBy\": \"John Doe\",\r\n    \"comments\": \"Verified successfully\"\r\n}, {\r\n    \"locationId\": 2,\r\n    \"companyId\": 102,\r\n    \"locationName\": \"Delhi - Connaught Place\",\r\n    \"registrationDate\": \"12-11-2025\",\r\n    \"address\": \"#2-India\",\r\n    \"country\": \"India\",\r\n    \"state\": \"Delhi\",\r\n    \"city\": \"Delhi\",\r\n    \"pinPostalCode\": \"110001\",\r\n    \"businessStatus\": \"Inactive\",\r\n    \"headquarterLocation\": false,\r\n    \"recordReviewed\": \"No\",\r\n    \"authenticityStatus\": \"Unverified\",\r\n    \"proofOfVerification\": \"proof2.jpg\",\r\n    \"verifiedBy\": \"Jane Doe\",\r\n    \"comments\": \"Not verified\"\r\n}]'"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://your-api-url/createCompanyLocationsFromExcelImport",
+          "protocol": "http",
+          "host": [
+            "your-api-url"
+          ],
+          "path": [
+            "createCompanyLocationsFromExcelImport"
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST \"http://your-api-url/createCompanyLocationsFromExcelImport\" \\\r\n-H \"Authorization: Bearer your_token\" \\\r\n-F \"documentZip=@/path/to/your/file.zip\" \\\r\n-F \"companyLocations='[{\r\n    \\\"locationId\\\": 1,\r\n    \\\"companyId\\\": 101,\r\n    \\\"locationName\\\": \\\"Mumbai - Malad\\\",\r\n    \\\"registrationDate\\\": \\\"10-10-2025\\\",\r\n    \\\"address\\\": \\\"#1-India\\\",\r\n    \\\"country\\\": \\\"India\\\",\r\n    \\\"state\\\": \\\"Maharashtra\\\",\r\n    \\\"city\\\": \\\"Mumbai\\\",\r\n    \\\"pinPostalCode\\\": \\\"400001\\\",\r\n    \\\"businessStatus\\\": \\\"Active\\\",\r\n    \\\"headquarterLocation\\\": true,\r\n    \\\"recordReviewed\\\": \\\"Yes\\\",\r\n    \\\"authenticityStatus\\\": \\\"Verified\\\",\r\n    \\\"proofOfVerification\\\": \\\"proof.jpg\\\",\r\n    \\\"verifiedBy\\\": \\\"John Doe\\\",\r\n    \\\"comments\\\": \\\"Verified successfully\\\"\r\n}, {\r\n    \\\"locationId\\\": 2,\r\n    \\\"companyId\\\": 102,\r\n    \\\"locationName\\\": \\\"Delhi - Connaught Place\\\",\r\n    \\\"registrationDate\\\": \\\"12-11-2025\\\",\r\n    \\\"address\\\": \\\"#2-India\\\",\r\n    \\\"country\\\": \\\"India\\\",\r\n    \\\"state\\\": \\\"Delhi\\\",\r\n    \\\"city\\\": \\\"Delhi\\\",\r\n    \\\"pinPostalCode\\\": \\\"110001\\\",\r\n    \\\"businessStatus\\\": \\\"Inactive\\\",\r\n    \\\"headquarterLocation\\\": false,\r\n    \\\"recordReviewed\\\": \\\"No\\\",\r\n    \\\"authenticityStatus\\\": \\\"Unverified\\\",\r\n    \\\"proofOfVerification\\\": \\\"proof2.jpg\\\",\r\n    \\\"verifiedBy\\\": \\\"Jane Doe\\\",\r\n    \\\"comments\\\": \\\"Not verified\\\"\r\n}]'\"\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "SSOCallback",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"token\": \"YOUR_GOOGLE_ID_TOKEN_HERE\"\r\n  }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/sso/callback",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "sso",
+            "callback"
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST \\\r\n  http://localhost:8080/sso/callback \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\r\n    \"token\": \"YOUR_GOOGLE_ID_TOKEN_HERE\"\r\n  }'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "passwordReset",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"Windows\""
+          },
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlSWQiOiJSb2xlSWQxIiwiYWdlbmN5SWQiOiIzMDM3IiwidXNlck5hbWUiOiJqZWV2YW5hK2FkbWludXNlckBmaXJzdGFkdmFudGFnZS5jb20iLCJ0b2tlblR5cGUiOiJBcHBsaWNhdGlvbl9Ub2tlbiIsInVzZXJJZCI6IkFnZW5jeVVzZXIxNDQiLCJzdWIiOiJqZWV2YW5hK2FkbWludXNlckBmaXJzdGFkdmFudGFnZS5jb20iLCJpYXQiOjE3NzIwODE4NjksImV4cCI6MTc3MjA5NjI2OX0.BhtyU4TydEU7L72c4J8ZIWak7MkTt8D9b5IUANV_lIERBUzjMHJlys94XB8mQL4oiJrCwuDwurZ1NjRf7fD-Rw"
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:4200/"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Not:A-Brand\";v=\"99\", \"Google Chrome\";v=\"145\", \"Chromium\";v=\"145\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "Accept",
+            "value": "application/json, text/plain, */*"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"userName\":\"palpandi+tu1@credentiai.com\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://dev-auth.credentiai.com/credentiacredentia/passwordReset",
+          "protocol": "https",
+          "host": [
+            "dev-auth",
+            "credentiai",
+            "com"
+          ],
+          "path": [
+            "credentiacredentia",
+            "passwordReset"
+          ]
+        },
+        "description": "Generated from cURL: curl 'https://dev-auth.credentiai.com/credentiacredentia/passwordReset' \\\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\n  -H 'Authorization: eyJhbGciOiJIUzUxMiJ9.eyJyb2xlSWQiOiJSb2xlSWQxIiwiYWdlbmN5SWQiOiIzMDM3IiwidXNlck5hbWUiOiJqZWV2YW5hK2FkbWludXNlckBmaXJzdGFkdmFudGFnZS5jb20iLCJ0b2tlblR5cGUiOiJBcHBsaWNhdGlvbl9Ub2tlbiIsInVzZXJJZCI6IkFnZW5jeVVzZXIxNDQiLCJzdWIiOiJqZWV2YW5hK2FkbWludXNlckBmaXJzdGFkdmFudGFnZS5jb20iLCJpYXQiOjE3NzIwODE4NjksImV4cCI6MTc3MjA5NjI2OX0.BhtyU4TydEU7L72c4J8ZIWak7MkTt8D9b5IUANV_lIERBUzjMHJlys94XB8mQL4oiJrCwuDwurZ1NjRf7fD-Rw' \\\n  -H 'Referer: http://localhost:4200/' \\\n  -H 'sec-ch-ua: \"Not:A-Brand\";v=\"99\", \"Google Chrome\";v=\"145\", \"Chromium\";v=\"145\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36' \\\n  -H 'Accept: application/json, text/plain, */*' \\\n  -H 'Content-Type: application/json' \\\n  --data-raw '{\"userName\":\"palpandi+tu1@credentiai.com\"}'"
+      },
+      "response": []
+    },
+    {
+      "name": "DeleteLocation",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{token}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"agencyId\": \"3037\",\r\n    \"locationId\": \"Firs-3037-Location-006\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Deployement}}/credOps-api/agency/location/delete",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "agency",
+            "location",
+            "delete"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createCandidate",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{token}}"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "type": "text",
+              "key": "candidateData",
+              "value": "{\n    \"tenantId\": \"2510\",\n    \"agencyId\": \"3037\",\n    \"firstName\": \"John\",\n    \"middleName\": \"M\",\n    \"lastName\": \"Doe\",\n    \"fatherName\": \"Robert Doe\",\n    \"gender\": \"Male\",\n    \"email\": \"jreey.sonry+02@exaldple.com\",\n    \"mobileNo\": \"+919112171242\",\n    \"dateOfBirth\": \"11-10-1975\",\n    \"dateOfJoining\": \"2025-10-12\",\n    \"employeeId\": \"EMP-12345\",\n    \"caseReceiveDate\": \"2025-10-10\",\n    \"location\": \"Hyderabad\",\n    \"employmentType\": \"Full-Time\",\n    \"identificationType\": \"Aadhar\",\n    \"identificationNo\": \"1234-5678-9012\",\n    \"project\": \"Project X\",\n    \"subProject\": \"Sub-Project A\",\n    \"module\": \"Module 1\",\n    \"subModule\": \"Sub-Module 1.1\",\n    \"createdBy\": \"AgencyUser1\"\n}"
+            },
+            {
+              "type": "file",
+              "key": "files",
+              "src": "/D:/Credentiai/Credentia_Data/Salary slip.png"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:9292/credOps-api/credops/candidate/createCandidate",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9292",
+          "path": [
+            "credOps-api",
+            "credops",
+            "candidate",
+            "createCandidate"
+          ]
+        },
+        "description": "Generated from cURL: curl --location 'http://localhost:9292/credOps-api/credops/candidate/createCandidate' \\\n--header 'Authorization: eyJhbGciOiJIUzUxMiJ9.eyJyb2xlSWQiOiJSb2xlSWQxIiwiYWdlbmN5SWQiOiIzMDM3IiwidXNlck5hbWUiOiJqZWV2YW5hK2FkbWludXNlckBmaXJzdGFkdmFudGFnZS5jb20iLCJ0b2tlblR5cGUiOiJBcHBsaWNhdGlvbl9Ub2tlbiIsInVzZXJJZCI6IkFnZW5jeVVzZXIxNDQiLCJzdWIiOiJqZWV2YW5hK2FkbWludXNlckBmaXJzdGFkdmFudGFnZS5jb20iLCJpYXQiOjE3NzIxMTUzNTYsImV4cCI6MTc3MjEyOTc1Nn0.CHX7YXrsymFkA5j4ZqoFWmEGDfu_co3Rto9PYNVSBTqkGAZq-MFyl2XnKsgUYQKRmZo_PYZRjnKpP5wAOD9m0A' \\\n--form 'candidateData=\"{\n    \\\"tenantId\\\": \\\"2510\\\",\n    \\\"agencyId\\\": \\\"3037\\\",\n    \\\"firstName\\\": \\\"John\\\",\n    \\\"middleName\\\": \\\"M\\\",\n    \\\"lastName\\\": \\\"Doe\\\",\n    \\\"fatherName\\\": \\\"Robert Doe\\\",\n    \\\"gender\\\": \\\"Male\\\",\n    \\\"email\\\": \\\"jreey.sonry@exaldple.com\\\",\n    \\\"mobileNo\\\": \\\"+919112171240\\\",\n    \\\"dateOfBirth\\\": \\\"11-10-1975\\\",\n    \\\"dateOfJoining\\\": \\\"2025-10-12\\\",\n    \\\"employeeId\\\": \\\"EMP-12345\\\",\n    \\\"caseReceiveDate\\\": \\\"2025-10-10\\\",\n    \\\"location\\\": \\\"Hyderabad\\\",\n    \\\"employmentType\\\": \\\"Full-Time\\\",\n    \\\"identificationType\\\": \\\"Aadhar\\\",\n    \\\"identificationNo\\\": \\\"1234-5678-9012\\\",\n    \\\"project\\\": \\\"Project X\\\",\n    \\\"subProject\\\": \\\"Sub-Project A\\\",\n    \\\"module\\\": \\\"Module 1\\\",\n    \\\"subModule\\\": \\\"Sub-Module 1.1\\\",\n    \\\"createdBy\\\": \\\"AgencyUser1\\\"\n}\"' \\\n--form 'files=@\"/C:/Users/mail2/OneDrive/Pictures/Screenshots/Screenshot (9).png\"'"
+      },
+      "response": []
+    },
+    {
+      "name": "https://credops-api.credentiai.com/credOps-api/checkStorage/getChecksBasedOnCRNAndCheckId",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/plain, /"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "en-GB,en;q=0.9"
+          },
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlSWQiOiJSb2xlSWQwMTciLCJhZ2VuY3lJZCI6IjMwMzciLCJ1c2VyTmFtZSI6InNpbmRodXJhY2VhbUBjcmVkZW50aWFpLmNvbSIsInRva2VuVHlwZSI6IkFwcGxpY2F0aW9uX1Rva2VuIiwidXNlcklkIjoiQWdlbmN5VXNlcjIxMSIsInN1YiI6InNpbmRodXJhY2VhbUBjcmVkZW50aWFpLmNvbSIsImlhdCI6MTc3MzM4ODM0MCwiZXhwIjoxNzczNDAyNzQwfQ.egHqtW86RqgdEUQXW2oWwFvxMbN0NzsjMgdWfQ3nJrJuOckfiA9eupt3lrWVikskB7RbiPf4JATEqrgtsDMBrg"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Origin",
+            "value": "https://dev.credentiai.com"
+          },
+          {
+            "key": "Referer",
+            "value": "https://dev.credentiai.com/"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "empty"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "cors"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "same-site"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Not:A-Brand\";v=\"99\", \"Google Chrome\";v=\"145\", \"Chromium\";v=\"145\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"Windows\""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"tenantId\":\"2512\",\"caseReferenceNumber\":\"TECH-2512-0024\",\"checkId\":\"SVY2QVU6\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://credops-api.credentiai.com/credOps-api/checkStorage/getChecksBasedOnCRNAndCheckId",
+          "protocol": "https",
+          "host": [
+            "credops-api",
+            "credentiai",
+            "com"
+          ],
+          "path": [
+            "credOps-api",
+            "checkStorage",
+            "getChecksBasedOnCRNAndCheckId"
+          ]
+        },
+        "description": "Generated from cURL: curl 'https://credops-api.credentiai.com/credOps-api/checkStorage/getChecksBasedOnCRNAndCheckId' \\\n  -H 'Accept: application/json, text/plain, /' \\\n  -H 'Accept-Language: en-GB,en;q=0.9' \\\n  -H 'Authorization: eyJhbGciOiJIUzUxMiJ9.eyJyb2xlSWQiOiJSb2xlSWQwMTciLCJhZ2VuY3lJZCI6IjMwMzciLCJ1c2VyTmFtZSI6InNpbmRodXJhY2VhbUBjcmVkZW50aWFpLmNvbSIsInRva2VuVHlwZSI6IkFwcGxpY2F0aW9uX1Rva2VuIiwidXNlcklkIjoiQWdlbmN5VXNlcjIxMSIsInN1YiI6InNpbmRodXJhY2VhbUBjcmVkZW50aWFpLmNvbSIsImlhdCI6MTc3MzM4ODM0MCwiZXhwIjoxNzczNDAyNzQwfQ.egHqtW86RqgdEUQXW2oWwFvxMbN0NzsjMgdWfQ3nJrJuOckfiA9eupt3lrWVikskB7RbiPf4JATEqrgtsDMBrg' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Content-Type: application/json' \\\n  -H 'Origin: https://dev.credentiai.com' \\\n  -H 'Referer: https://dev.credentiai.com/' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: same-site' \\\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36' \\\n  -H 'sec-ch-ua: \"Not:A-Brand\";v=\"99\", \"Google Chrome\";v=\"145\", \"Chromium\";v=\"145\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\n  --data-raw '{\"tenantId\":\"2512\",\"caseReferenceNumber\":\"TECH-2512-0024\",\"checkId\":\"SVY2QVU6\"}'"
+      },
+      "response": []
+    },
+    {
+      "name": "https://credops-api.credentiai.com/credOps-api/tenant/createTenantContract",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/plain, */*"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "en-GB,en-US;q=0.9,en;q=0.8"
+          },
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlSWQiOiJSb2xlSWQxIiwiYWdlbmN5SWQiOiIzMDM3IiwidXNlck5hbWUiOiJqZWV2YW5hK2FkbWludXNlckBmaXJzdGFkdmFudGFnZS5jb20iLCJ0b2tlblR5cGUiOiJBcHBsaWNhdGlvbl9Ub2tlbiIsInVzZXJJZCI6IkFnZW5jeVVzZXIxNDQiLCJzdWIiOiJqZWV2YW5hK2FkbWludXNlckBmaXJzdGFkdmFudGFnZS5jb20iLCJpYXQiOjE3NzMzOTE0NzUsImV4cCI6MTc3MzQwNTg3NX0.xdhCjrYMnp53c53SkYUnYtLImDzhlwoXYPTy1w_GO85TR0tETrxf0wY7f9L_GCKzdzfymiiHw7s4X3MeUuaQkg"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Origin",
+            "value": "http://localhost:4200"
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:4200/"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "empty"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "cors"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "cross-site"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Not:A-Brand\";v=\"99\", \"Google Chrome\";v=\"145\", \"Chromium\";v=\"145\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"Windows\""
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "contract",
+              "value": "{\"agencyId\":\"3037\",\"tenantId\":\"2538\",\"effectiveFrom\":\"2026-03-13T18:30:00.000Z\",\"effectiveTo\":\"2026-03-24T18:30:00.000Z\"}",
+              "type": "text"
+            },
+            {
+              "key": "file",
+              "type": "file",
+              "src": "0dda5d54-cbee-4114-9c5d-7b6769bde928 (2) (3).pdf"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://credops-api.credentiai.com/credOps-api/tenant/createTenantContract",
+          "protocol": "https",
+          "host": [
+            "credops-api",
+            "credentiai",
+            "com"
+          ],
+          "path": [
+            "credOps-api",
+            "tenant",
+            "createTenantContract"
+          ]
+        },
+        "description": "Generated from cURL: curl 'https://credops-api.credentiai.com/credOps-api/tenant/createTenantContract' \\\n  -H 'Accept: application/json, text/plain, */*' \\\n  -H 'Accept-Language: en-GB,en-US;q=0.9,en;q=0.8' \\\n  -H 'Authorization: eyJhbGciOiJIUzUxMiJ9.eyJyb2xlSWQiOiJSb2xlSWQxIiwiYWdlbmN5SWQiOiIzMDM3IiwidXNlck5hbWUiOiJqZWV2YW5hK2FkbWludXNlckBmaXJzdGFkdmFudGFnZS5jb20iLCJ0b2tlblR5cGUiOiJBcHBsaWNhdGlvbl9Ub2tlbiIsInVzZXJJZCI6IkFnZW5jeVVzZXIxNDQiLCJzdWIiOiJqZWV2YW5hK2FkbWludXNlckBmaXJzdGFkdmFudGFnZS5jb20iLCJpYXQiOjE3NzMzOTE0NzUsImV4cCI6MTc3MzQwNTg3NX0.xdhCjrYMnp53c53SkYUnYtLImDzhlwoXYPTy1w_GO85TR0tETrxf0wY7f9L_GCKzdzfymiiHw7s4X3MeUuaQkg' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryS3RP7iaImjEpTomg' \\\n  -H 'Origin: http://localhost:4200' \\\n  -H 'Referer: http://localhost:4200/' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: cross-site' \\\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36' \\\n  -H 'sec-ch-ua: \"Not:A-Brand\";v=\"99\", \"Google Chrome\";v=\"145\", \"Chromium\";v=\"145\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\n  --data-raw $'------WebKitFormBoundaryS3RP7iaImjEpTomg\\r\\nContent-Disposition: form-data; name=\"contract\"\\r\\n\\r\\n{\"agencyId\":\"3037\",\"tenantId\":\"2538\",\"effectiveFrom\":\"2026-03-13T18:30:00.000Z\",\"effectiveTo\":\"2026-03-24T18:30:00.000Z\"}\\r\\n------WebKitFormBoundaryS3RP7iaImjEpTomg\\r\\nContent-Disposition: form-data; name=\"file\"; filename=\"0dda5d54-cbee-4114-9c5d-7b6769bde928 (2) (3).pdf\"\\r\\nContent-Type: application/pdf\\r\\n\\r\\n\\r\\n------WebKitFormBoundaryS3RP7iaImjEpTomg--\\r\\n'"
+      },
+      "response": []
+    },
+    {
+      "name": "https://credops-api.credentiai.com/credOps-api/tenant/createTenantContract",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/plain, */*"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "en-GB,en-US;q=0.9,en;q=0.8"
+          },
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlSWQiOiJSb2xlSWQxIiwiYWdlbmN5SWQiOiIzMDM3IiwidXNlck5hbWUiOiJqZWV2YW5hK2FkbWludXNlckBmaXJzdGFkdmFudGFnZS5jb20iLCJ0b2tlblR5cGUiOiJBcHBsaWNhdGlvbl9Ub2tlbiIsInVzZXJJZCI6IkFnZW5jeVVzZXIxNDQiLCJzdWIiOiJqZWV2YW5hK2FkbWludXNlckBmaXJzdGFkdmFudGFnZS5jb20iLCJpYXQiOjE3NzMzOTYyMzcsImV4cCI6MTc3MzQxMDYzN30.KAUhO3K2N4Lx2yQPspDRnGJ0bvDnFHHYAd0cU6lptsm1WGOiJxo07K0JPC7bl2C3Dr37D8mDkyx-RNhPaQa9tA"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Origin",
+            "value": "http://localhost:4200"
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:4200/"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "empty"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "cors"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "cross-site"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Chromium\";v=\"146\", \"Not-A.Brand\";v=\"24\", \"Google Chrome\";v=\"146\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"Windows\""
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "contract",
+              "value": "{\"agencyId\":\"3037\",\"tenantId\":\"2585\",\"effectiveFrom\":\"2026-03-14T18:30:00.000Z\",\"effectiveTo\":\"2026-03-20T18:30:00.000Z\"}",
+              "type": "text"
+            },
+            {
+              "key": "file",
+              "type": "file",
+              "src": "Manage Clients - Add Contract _ CredOps.pdf"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://credops-api.credentiai.com/credOps-api/tenant/createTenantContract",
+          "protocol": "https",
+          "host": [
+            "credops-api",
+            "credentiai",
+            "com"
+          ],
+          "path": [
+            "credOps-api",
+            "tenant",
+            "createTenantContract"
+          ]
+        },
+        "description": "Generated from cURL: curl 'https://credops-api.credentiai.com/credOps-api/tenant/createTenantContract' \\\n  -H 'Accept: application/json, text/plain, */*' \\\n  -H 'Accept-Language: en-GB,en-US;q=0.9,en;q=0.8' \\\n  -H 'Authorization: eyJhbGciOiJIUzUxMiJ9.eyJyb2xlSWQiOiJSb2xlSWQxIiwiYWdlbmN5SWQiOiIzMDM3IiwidXNlck5hbWUiOiJqZWV2YW5hK2FkbWludXNlckBmaXJzdGFkdmFudGFnZS5jb20iLCJ0b2tlblR5cGUiOiJBcHBsaWNhdGlvbl9Ub2tlbiIsInVzZXJJZCI6IkFnZW5jeVVzZXIxNDQiLCJzdWIiOiJqZWV2YW5hK2FkbWludXNlckBmaXJzdGFkdmFudGFnZS5jb20iLCJpYXQiOjE3NzMzOTYyMzcsImV4cCI6MTc3MzQxMDYzN30.KAUhO3K2N4Lx2yQPspDRnGJ0bvDnFHHYAd0cU6lptsm1WGOiJxo07K0JPC7bl2C3Dr37D8mDkyx-RNhPaQa9tA' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Content-Type: multipart/form-data; boundary=----WebKitFormBoundary8Kj671RyAr8k0L0c' \\\n  -H 'Origin: http://localhost:4200' \\\n  -H 'Referer: http://localhost:4200/' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: cross-site' \\\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36' \\\n  -H 'sec-ch-ua: \"Chromium\";v=\"146\", \"Not-A.Brand\";v=\"24\", \"Google Chrome\";v=\"146\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\n  --data-raw $'------WebKitFormBoundary8Kj671RyAr8k0L0c\\r\\nContent-Disposition: form-data; name=\"contract\"\\r\\n\\r\\n{\"agencyId\":\"3037\",\"tenantId\":\"2585\",\"effectiveFrom\":\"2026-03-14T18:30:00.000Z\",\"effectiveTo\":\"2026-03-20T18:30:00.000Z\"}\\r\\n------WebKitFormBoundary8Kj671RyAr8k0L0c\\r\\nContent-Disposition: form-data; name=\"file\"; filename=\"Manage Clients - Add Contract _ CredOps.pdf\"\\r\\nContent-Type: application/pdf\\r\\n\\r\\n\\r\\n------WebKitFormBoundary8Kj671RyAr8k0L0c--\\r\\n'"
+      },
+      "response": []
+    }
+  ]
+}

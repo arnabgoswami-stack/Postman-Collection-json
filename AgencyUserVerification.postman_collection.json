@@ -1,0 +1,551 @@
+{
+  "info": {
+    "_postman_id": "ba9f8d5c-fc64-4119-93ab-e7b383052914",
+    "name": "AgencyUserVerification",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "49422711",
+    "_collection_link": "https://go.postman.co/collection/49422711-ba9f8d5c-fc64-4119-93ab-e7b383052914?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "/agencyVerification",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJhZ2VuY3lJZCI6IjMwMDQiLCJ1c2VyTmFtZSI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsInRva2VuVHlwZSI6IkFwcGxpY2F0aW9uX1Rva2VuIiwidXNlcklkIjoiQWdlbmN5X1VzZXItNSIsInN1YiI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsImlhdCI6MTc2NDE0ODE2MiwiZXhwIjoxNzY0MTYyNTYyfQ.SVfgNtDxqRNwrPCavs4gnGf6ItfHJETA_Zg0Xg1tjO1JCWV0fjokUN7MMladAG6uK7a3y01-oEZ_8AUJwDy3Fw",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"checkId\":\"check1\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://credops-api.credentiai.com/credOps-api/agency/Verification/getUsersByCheck",
+          "protocol": "https",
+          "host": [
+            "credops-api",
+            "credentiai",
+            "com"
+          ],
+          "path": [
+            "credOps-api",
+            "agency",
+            "Verification",
+            "getUsersByCheck"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "assignToCandidate",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJhZ2VuY3lJZCI6IjMwMDQiLCJ1c2VyTmFtZSI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsInRva2VuVHlwZSI6IkFwcGxpY2F0aW9uX1Rva2VuIiwidXNlcklkIjoiQWdlbmN5X1VzZXItNSIsInN1YiI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsImlhdCI6MTc2NDE0ODE2MiwiZXhwIjoxNzY0MTYyNTYyfQ.SVfgNtDxqRNwrPCavs4gnGf6ItfHJETA_Zg0Xg1tjO1JCWV0fjokUN7MMladAG6uK7a3y01-oEZ_8AUJwDy3Fw",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"tenantId\":\"\",\r\n    \"caseReferenceNumber\":\"\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://credops-api.credentiai.com/credOps-api/credops/candidate/assignToCandidate",
+          "protocol": "https",
+          "host": [
+            "credops-api",
+            "credentiai",
+            "com"
+          ],
+          "path": [
+            "credOps-api",
+            "credops",
+            "candidate",
+            "assignToCandidate"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "userAssignmentForVerification",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlSWQiOiJSb2xlSWQxMTUiLCJhZ2VuY3lJZCI6IjMwMzAiLCJ1c2VyTmFtZSI6InZ0bDFAZ21haWwuY29tIiwidG9rZW5UeXBlIjoiQXBwbGljYXRpb25fVG9rZW4iLCJ1c2VySWQiOiJBZ2VuY3lVc2VyMTA0Iiwic3ViIjoidnRsMUBnbWFpbC5jb20iLCJpYXQiOjE3NjU1NjMwMjIsImV4cCI6MTc2NTU3NzQyMn0.peLDEjQHMwk1pd2VY83KoahzMQRZZC7GeCZEd97pstDG3nTfQI8901DB8jerIJWu3guEzu8R8zLMLcuSbMBahg",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n   \"checkSubId\":\"065\",\r\n    \"checkId\":\"FMCG70PB\",\r\n\"tenantId\":\"2510\",\r\n\"caseReferenceNumber\":\"INFO-2510-0044\",\r\n\"userId\":\"AgencyUser109\"\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{urlForCredops}}/agency/Verification/userAssignmentForVerification",
+          "host": [
+            "{{urlForCredops}}"
+          ],
+          "path": [
+            "agency",
+            "Verification",
+            "userAssignmentForVerification"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateDECompleteForCandidate",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlSWQiOiJSb2xlSWQxMTQiLCJhZ2VuY3lJZCI6IjMwMzAiLCJ1c2VyTmFtZSI6ImR0bEBnbWFpbC5jb20iLCJ0b2tlblR5cGUiOiJBcHBsaWNhdGlvbl9Ub2tlbiIsInVzZXJJZCI6IkFnZW5jeVVzZXIxMDIiLCJzdWIiOiJkdGxAZ21haWwuY29tIiwiaWF0IjoxNzY3NjA5MDcyLCJleHAiOjE3Njc2MjM0NzJ9.DQKY-vt__EpdKzaUXEQQgi00aJGuvd3jufj6AoRE7ICKf6ruG9jqZ4axEiXmyCPQnACByM-V8_Po1aAE44wvug",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"checkSubId\":\"217\",\r\n    \"checkId\":\"ED0X7TL2\",\r\n    \"tenantId\": \"2510\",\r\n    \"caseReferenceNumber\": \"INFO-2510-0159\",\r\n    \"agencyId\":\"3030\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{urlForCredops}}/agency/updateDECompleteForCandidate",
+          "host": [
+            "{{urlForCredops}}"
+          ],
+          "path": [
+            "agency",
+            "updateDECompleteForCandidate"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateCheckStatusAsInsufficiencyRaised",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlSWQiOiJSb2xlSWQxMTYiLCJhZ2VuY3lJZCI6IjMwMzAiLCJ1c2VyTmFtZSI6InZ0bTFAZ21haWwuY29tIiwidG9rZW5UeXBlIjoiQXBwbGljYXRpb25fVG9rZW4iLCJ1c2VySWQiOiJBZ2VuY3lVc2VyMTA5Iiwic3ViIjoidnRtMUBnbWFpbC5jb20iLCJpYXQiOjE3NjU4NjQyODEsImV4cCI6MTc2NTg3ODY4MX0.y9AK6_Lfp22L6qHxq6iHoZJNeaXwmcjbpOJ5YdCcNVcHYMO6a2OfTkx5nMJMc57WeMR2s64avABpWLQPFXq-Wg",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"checkSubId\":\"082\",\r\n    \"checkId\":\"FMCG70PB\",\r\n    \"tenantId\": \"2510\",\r\n    \"caseReferenceNumber\": \"INFO-2510-0063\",\r\n    \"insuffRaiseRemark\":\"not good\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{urlForCredops}}/agency/Verification/updateCheckStatusAsInsufficiencyRaised",
+          "host": [
+            "{{urlForCredops}}"
+          ],
+          "path": [
+            "agency",
+            "Verification",
+            "updateCheckStatusAsInsufficiencyRaised"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateCheckStatusAsInsufficiencyRaised Copy",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlSWQiOiJSb2xlSWQxMTQiLCJhZ2VuY3lJZCI6IjMwMzAiLCJ1c2VyTmFtZSI6ImR0bEBnbWFpbC5jb20iLCJ0b2tlblR5cGUiOiJBcHBsaWNhdGlvbl9Ub2tlbiIsInVzZXJJZCI6IkFnZW5jeVVzZXIxMDIiLCJzdWIiOiJkdGxAZ21haWwuY29tIiwiaWF0IjoxNzY1ODg5MjY0LCJleHAiOjE3NjU5MDM2NjR9.68jDSLVfQdDD36tga_1WXZgJYfihnHZQk0zS4dhyGnXd6JPE_ZLzDQOiaayFC628eHMGcYWNEAN-BLOTcsH79g",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"checkSubId\":\"099\",\r\n    \"checkId\":\"FMCG70PB\",\r\n    \"tenantId\": \"2510\",\r\n    \"caseReferenceNumber\": \"INFO-2510-0072\",\r\n    \"insuffAddressedRemark\":\"good\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{urlForCredops}}/agency/Verification/updateCheckStatusAsInsufficiencyAddressed",
+          "host": [
+            "{{urlForCredops}}"
+          ],
+          "path": [
+            "agency",
+            "Verification",
+            "updateCheckStatusAsInsufficiencyAddressed"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "submit Candidate",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJhZ2VuY3lJZCI6IjMwMDQiLCJ1c2VyTmFtZSI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsInRva2VuVHlwZSI6IkFwcGxpY2F0aW9uX1Rva2VuIiwidXNlcklkIjoiQWdlbmN5X1VzZXItNSIsInN1YiI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsImlhdCI6MTc2NDA1NDIxNCwiZXhwIjoxNzY0MDY4NjE0fQ.cTmR-YjVf2p6fnAV5wgbj4ar6se1_EDDERd1e8-l9M-ipyCHwaqVXic0yN15Y4eG4VZ3KcMn6O-uJvFlvjkUFA",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"tenantId\":\"2510\",\r\n    \"caseReferenceNumber\":\"INFO-2510-0002\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{urlForCredops}}/credops/candidate/submitCandidate",
+          "host": [
+            "{{urlForCredops}}"
+          ],
+          "path": [
+            "credops",
+            "candidate",
+            "submitCandidate"
+          ],
+          "query": [
+            {
+              "key": "agencyId",
+              "value": "3004",
+              "disabled": true
+            },
+            {
+              "key": "checkId",
+              "value": "JMRD0BCK",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://credops-api.credentiai.com/credOps-api/api/workFlow/get",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/plain, /"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "en-GB,en;q=0.9"
+          },
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlSWQiOiJST0xFX0lELTEiLCJhZ2VuY3lJZCI6IjMwMjAiLCJ1c2VyTmFtZSI6ImJhbmthcjExMkBzb2x1dGlvbnMuY29tIiwidG9rZW5UeXBlIjoiQXBwbGljYXRpb25fVG9rZW4iLCJ1c2VySWQiOiJBZ2VuY3lVc2VyMTIiLCJzdWIiOiJiYW5rYXIxMTJAc29sdXRpb25zLmNvbSIsImlhdCI6MTc2NDgyOTM4NiwiZXhwIjoxNzY0ODQzNzg2fQ.tBdl89QjjxlUbHbzwuQGiWvLPFh6KmOVQH0u_amSaXwXyqIgH_89-fDcuiZvUFajk4bCXko9udT_W6e98K31Nw"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Origin",
+            "value": "https://dev.credentiai.com"
+          },
+          {
+            "key": "Referer",
+            "value": "https://dev.credentiai.com/"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "empty"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "cors"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "same-site"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"Windows\""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"agencyId\":\"3004\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://credops-api.credentiai.com/credOps-api/api/workFlow/get",
+          "protocol": "https",
+          "host": [
+            "credops-api",
+            "credentiai",
+            "com"
+          ],
+          "path": [
+            "credOps-api",
+            "api",
+            "workFlow",
+            "get"
+          ]
+        },
+        "description": "Generated from cURL: curl 'https://credops-api.credentiai.com/credOps-api/api/workFlow/get' \\\n  -H 'Accept: application/json, text/plain, /' \\\n  -H 'Accept-Language: en-GB,en;q=0.9' \\\n  -H 'Authorization: eyJhbGciOiJIUzUxMiJ9.eyJyb2xlSWQiOiJST0xFX0lELTEiLCJhZ2VuY3lJZCI6IjMwMjAiLCJ1c2VyTmFtZSI6ImJhbmthcjExMkBzb2x1dGlvbnMuY29tIiwidG9rZW5UeXBlIjoiQXBwbGljYXRpb25fVG9rZW4iLCJ1c2VySWQiOiJBZ2VuY3lVc2VyMTIiLCJzdWIiOiJiYW5rYXIxMTJAc29sdXRpb25zLmNvbSIsImlhdCI6MTc2NDgyOTM4NiwiZXhwIjoxNzY0ODQzNzg2fQ.tBdl89QjjxlUbHbzwuQGiWvLPFh6KmOVQH0u_amSaXwXyqIgH_89-fDcuiZvUFajk4bCXko9udT_W6e98K31Nw' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Content-Type: application/json' \\\n  -H 'Origin: https://dev.credentiai.com' \\\n  -H 'Referer: https://dev.credentiai.com/' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: same-site' \\\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36' \\\n  -H 'sec-ch-ua: \"Chromium\";v=\"142\", \"Google Chrome\";v=\"142\", \"Not_A Brand\";v=\"99\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\n  --data-raw '{\"agencyId\":\"3004\"}'"
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://credops-api.credentiai.com/credOps-api/documents/upload",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/plain, */*"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "en-GB,en-US;q=0.9,en;q=0.8"
+          },
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlSWQiOiJyb2xlSWQxIiwiYWdlbmN5SWQiOiIzMDA0IiwidXNlck5hbWUiOiJ2aW5heS5iaGFkYXVyaWFAdHJhbnNwYXJlbmN5dGVzdC5jb20iLCJ0b2tlblR5cGUiOiJBcHBsaWNhdGlvbl9Ub2tlbiIsInVzZXJJZCI6IkFnZW5jeV9Vc2VyLTUiLCJzdWIiOiJ2aW5heS5iaGFkYXVyaWFAdHJhbnNwYXJlbmN5dGVzdC5jb20iLCJpYXQiOjE3NjUxODI4MzEsImV4cCI6MTc2NTE5NzIzMX0.qHYDMBzsZZb2PkDlRNOvDoB93KtmFPvUJ4Qf_f-qLpfBvIICi3nDK6yo4xFTTtL3qyWYhKVt2O2UYlBMj9EwIQ"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Origin",
+            "value": "http://localhost:4200"
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:4200/"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "empty"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "cors"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "cross-site"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Google Chrome\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"Windows\""
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": "Screenshot 2025-11-17 111121.png"
+            },
+            {
+              "key": "tenantId",
+              "value": "3004",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{urlForCredops}}/documents/upload",
+          "host": [
+            "{{urlForCredops}}"
+          ],
+          "path": [
+            "documents",
+            "upload"
+          ]
+        },
+        "description": "Generated from cURL: curl 'https://credops-api.credentiai.com/credOps-api/documents/upload' \\\n  -H 'Accept: application/json, text/plain, */*' \\\n  -H 'Accept-Language: en-GB,en-US;q=0.9,en;q=0.8' \\\n  -H 'Authorization: eyJhbGciOiJIUzUxMiJ9.eyJyb2xlSWQiOiJST0xFX0lELTEiLCJhZ2VuY3lJZCI6IjMwMDQiLCJ1c2VyTmFtZSI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsInRva2VuVHlwZSI6IkFwcGxpY2F0aW9uX1Rva2VuIiwidXNlcklkIjoiQWdlbmN5X1VzZXItNSIsInN1YiI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsImlhdCI6MTc2NTE2OTkyNywiZXhwIjoxNzY1MTg0MzI3fQ.y8SLF2-NqYqKKj5eyBOk4A5zMZWOGKmMEJqeA2cyAnt2I-ZPalSm6a1QAfZXS5871P-8caYh3upPSIUjTb38Lg' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryWLSfaZUFOgwk9nBj' \\\n  -H 'Origin: http://localhost:4200' \\\n  -H 'Referer: http://localhost:4200/' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: cross-site' \\\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36' \\\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\n  --data-raw $'------WebKitFormBoundaryWLSfaZUFOgwk9nBj\\r\\nContent-Disposition: form-data; name=\"file\"; filename=\"Screenshot 2025-11-17 111121.png\"\\r\\nContent-Type: image/png\\r\\n\\r\\n\\r\\n------WebKitFormBoundaryWLSfaZUFOgwk9nBj\\r\\nContent-Disposition: form-data; name=\"tenantId\"\\r\\n\\r\\n2510\\r\\n------WebKitFormBoundaryWLSfaZUFOgwk9nBj--\\r\\n'"
+      },
+      "response": []
+    },
+    {
+      "name": "https://credops-api.credentiai.com/credOps-api/documents/upload Copy",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/plain, */*"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "en-GB,en-US;q=0.9,en;q=0.8"
+          },
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlSWQiOiJyb2xlSWQxIiwiYWdlbmN5SWQiOiIzMDA0IiwidXNlck5hbWUiOiJ2aW5heS5iaGFkYXVyaWFAdHJhbnNwYXJlbmN5dGVzdC5jb20iLCJ0b2tlblR5cGUiOiJBcHBsaWNhdGlvbl9Ub2tlbiIsInVzZXJJZCI6IkFnZW5jeV9Vc2VyLTUiLCJzdWIiOiJ2aW5heS5iaGFkYXVyaWFAdHJhbnNwYXJlbmN5dGVzdC5jb20iLCJpYXQiOjE3NjUxODI4MzEsImV4cCI6MTc2NTE5NzIzMX0.qHYDMBzsZZb2PkDlRNOvDoB93KtmFPvUJ4Qf_f-qLpfBvIICi3nDK6yo4xFTTtL3qyWYhKVt2O2UYlBMj9EwIQ"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Origin",
+            "value": "http://localhost:4200"
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:4200/"
+          },
+          {
+            "key": "Sec-Fetch-Dest",
+            "value": "empty"
+          },
+          {
+            "key": "Sec-Fetch-Mode",
+            "value": "cors"
+          },
+          {
+            "key": "Sec-Fetch-Site",
+            "value": "cross-site"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Google Chrome\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"Windows\""
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": "Screenshot 2025-11-17 111121.png"
+            },
+            {
+              "key": "tenantId",
+              "value": "3004",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{urlForCredops}}/documents/upload",
+          "host": [
+            "{{urlForCredops}}"
+          ],
+          "path": [
+            "documents",
+            "upload"
+          ]
+        },
+        "description": "Generated from cURL: curl 'https://credops-api.credentiai.com/credOps-api/documents/upload' \\\n  -H 'Accept: application/json, text/plain, */*' \\\n  -H 'Accept-Language: en-GB,en-US;q=0.9,en;q=0.8' \\\n  -H 'Authorization: eyJhbGciOiJIUzUxMiJ9.eyJyb2xlSWQiOiJST0xFX0lELTEiLCJhZ2VuY3lJZCI6IjMwMDQiLCJ1c2VyTmFtZSI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsInRva2VuVHlwZSI6IkFwcGxpY2F0aW9uX1Rva2VuIiwidXNlcklkIjoiQWdlbmN5X1VzZXItNSIsInN1YiI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsImlhdCI6MTc2NTE2OTkyNywiZXhwIjoxNzY1MTg0MzI3fQ.y8SLF2-NqYqKKj5eyBOk4A5zMZWOGKmMEJqeA2cyAnt2I-ZPalSm6a1QAfZXS5871P-8caYh3upPSIUjTb38Lg' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Content-Type: multipart/form-data; boundary=----WebKitFormBoundaryWLSfaZUFOgwk9nBj' \\\n  -H 'Origin: http://localhost:4200' \\\n  -H 'Referer: http://localhost:4200/' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: cross-site' \\\n  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36' \\\n  -H 'sec-ch-ua: \"Google Chrome\";v=\"143\", \"Chromium\";v=\"143\", \"Not A(Brand\";v=\"24\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"Windows\"' \\\n  --data-raw $'------WebKitFormBoundaryWLSfaZUFOgwk9nBj\\r\\nContent-Disposition: form-data; name=\"file\"; filename=\"Screenshot 2025-11-17 111121.png\"\\r\\nContent-Type: image/png\\r\\n\\r\\n\\r\\n------WebKitFormBoundaryWLSfaZUFOgwk9nBj\\r\\nContent-Disposition: form-data; name=\"tenantId\"\\r\\n\\r\\n2510\\r\\n------WebKitFormBoundaryWLSfaZUFOgwk9nBj--\\r\\n'"
+      },
+      "response": []
+    },
+    {
+      "name": "getAssociatedUser",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ]
+}

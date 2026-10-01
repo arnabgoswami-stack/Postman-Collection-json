@@ -1,0 +1,233 @@
+{
+  "info": {
+    "_postman_id": "89a2ab12-f19e-407d-87aa-eb07175a5332",
+    "name": "Tenant API's For Agency",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "49422711",
+    "_collection_link": "https://go.postman.co/collection/49422711-89a2ab12-f19e-407d-87aa-eb07175a5332?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "CreateTenant",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \n  \"tenantName\": \"Credentia11\",\n  \"abbreviation\": \"CDA\",\n  \"website\": \"https://www.credentia.com\",\n  \"typeOfEstablishment\": \"Software Company\",\n  \"timeZone\": \"Asia/Kolkata\",\n  \"tatCounter\": \"5\",\n  \"emailId\": \"billing@credentia.com\",\n  \"mobileNumber\": \"+91-9876543210\",\n  \"billingContactName\": \"John Doe\",\n  \"currencyId\": \"INR\", // validation \n  \"tenantAddress\": {\n    \"address\": \"123 Main St\",\n    \"cityId\": \"CITY_ID-133024\",\n    \"stateId\": \"STATE_ID-4008\",\n    \"countryId\": \"COUNTRY_ID-101\",\n    \"pinCode\": \"400001\"\n  },\n  \"companyRegistrationIdentifiers\": [\n    {\n      \"identificationType\": \"PAN\",\n      \"identificationNo\": \"ABCDE1234F\"\n    },\n    {\n      \"identificationType\": \"GST\",\n      \"identificationNo\": \"IN123456789\"\n    }\n  ]\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Deployement}}/credOps-api/tenant/create",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "tenant",
+            "create"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "UpdateTenant",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"tenantId\" : \"2522\",\n  \"tenantName\": \"Credentia_101\",\n  \"abbreviation\": \"CDA\",\n  \"website\": \"https://www.credentia.com\",\n  \"typeOfEstablishment\": \"Production Company\",\n  \"timeZone\": \"Asia/Kolkata\",\n  \"emailId\": \"billing@credentia1.com\",\n  \"mobileNumber\": \"+91-9876543210\",\n  \"billingContactName\": \"John Son\",\n  \"tenantAddress\": {\n    \"address\": \"Main Raod\",\n    \"cityId\": \"CITY_ID-133024\",\n    \"stateId\": \"STATE_ID-4008\",\n    \"countryId\": \"COUNTRY_ID-101\", \n    \"pinCode\": \"400005\"\n  },\n  \"companyRegistrationIdentifiers\": [\n    {\n      \"identificationType\": \"PAN\",\n      \"identificationNo\": \"ABCDE1234F\"\n    },\n    {\n      \"identificationType\": \"ABC\",\n      \"identificationNo\": \"IN123456789\"\n    }\n  ]\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Deployement}}/credOps-api/tenant/updateTenant",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "tenant",
+            "updateTenant"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getTenantByID",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n//   \"tenantId\" : \"2533\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Deployement}}/credOps-api/tenant/getAllTenantsAndById",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "tenant",
+            "getAllTenantsAndById"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getALLTenant",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Deployement}}/credOps-api/tenant/getAllTenantsAndById",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "tenant",
+            "getAllTenantsAndById"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deleteTenant",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"tenantId\" : \"2523\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Deployement}}/credOps-api/tenant/deleteTenant",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "tenant",
+            "deleteTenant"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getAllTenant",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Deployement}}/credOps-api/tenant/getTenantAll",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "tenant",
+            "getTenantAll"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

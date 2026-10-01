@@ -1,0 +1,610 @@
+{
+  "info": {
+    "_postman_id": "fc63b1b8-621c-4146-9044-b11d4d60429c",
+    "name": "Workflow APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "49422711",
+    "_collection_link": "https://go.postman.co/collection/49422711-fc63b1b8-621c-4146-9044-b11d4d60429c?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "addChecks",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{dtl}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"tenantId\": \"2510\",\r\n    \"agencyId\": \"3030\",\r\n    \"caseReferenceNumber\": \"INFO-2510-0193\",\r\n    \"checkList\": [\r\n        {\r\n            \"checkId\": \"ED0X7TL2\",\r\n            \"checkName\": \"Education\",\r\n            \"agencyId\": \"3030\"\r\n        }\r\n        // ,\r\n        // {\r\n        //     \"checkId\": \"Education\",\r\n        //     \"checkName\": \"SINDHU PAN\",\r\n        //     \"agencyId\": \"3030\"\r\n        // }\r\n    ]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Deployement}}/credOps-api/credops/case/create",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "credops",
+            "case",
+            "create"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "AssignToCandidate",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{dtl}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"tenantId\":\"2510\",\r\n    \"caseReferenceNumber\":\"INFO-2510-0170\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Deployement}}/credOps-api/credops/candidate/assignToCandidate",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "credops",
+            "candidate",
+            "assignToCandidate"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "DE Complete",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{dtl}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"checkSubId\": \"253\",\r\n    \"checkId\": \"ED0X7TL2\",\r\n    \"tenantId\": \"2510\",\r\n    \"caseReferenceNumber\": \"INFO-2510-0202\",\r\n    \"agencyId\": \"3030\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Deployement}}/credOps-api/agency/updateDECompleteForCandidate",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "agency",
+            "updateDECompleteForCandidate"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Raise L1",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{dtl}}"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "type": "text",
+              "key": "insuffData",
+              "value": "{ \"checkSubId\": \"246\", \"checkId\": \"ED0X7TL2\", \"tenantId\": \"2510\", \"caseReferenceNumber\": \"INFO-2510-0196\", \"agencyId\": \"3030\", \"remark\":\"Not good\" }"
+            },
+            {
+              "type": "file",
+              "key": "file",
+              "src": "/C:/Users/Software Engineer/Downloads/Untitled document (2).pdf"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{Deployement}}/credOps-api/agency/insufficiencyRaisedByDE",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "agency",
+            "insufficiencyRaisedByDE"
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST 'http://127.0.0.1:9292/credOps-api/agency/insufficiencyRaisedByDE' \\\r\n  --header 'Authorization: eyJhbGciOiJIUzUxMiJ9.eyJyb2xlSWQiOiJSb2xlSWQxMTQiLCJhZ2VuY3lJZCI6IjMwMzAiLCJ1c2VyTmFtZSI6ImR0bEBnbWFpbC5jb20iLCJ0b2tlblR5cGUiOiJBcHBsaWNhdGlvbl9Ub2tlbiIsInVzZXJJZCI6IkFnZW5jeVVzZXIxMDIiLCJzdWIiOiJkdGxAZ21haWwuY29tIiwiaWF0IjoxNzY3NjA5MDcyLCJleHAiOjE3Njc2MjM0NzJ9.DQKY-vt__EpdKzaUXEQQgi00aJGuvd3jufj6AoRE7ICKf6ruG9jqZ4axEiXmyCPQnACByM-V8_Po1aAE44wvug' \\\r\n  --form 'insuffData={ \"checkSubId\": \"234\", \"checkId\": \"ED0X7TL2\", \"tenantId\": \"2510\", \"caseReferenceNumber\": \"INFO-2510-0181\", \"agencyId\": \"3030\", \"remark\":\"Not good\" }' \\\r\n  --form 'file=@\"/C:/Users/vinay/Downloads/Wifi Bill.pdf\"'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "VTL Assign To Verify",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlSWQiOiJSb2xlSWQxMTUiLCJhZ2VuY3lJZCI6IjMwMzAiLCJ1c2VyTmFtZSI6InZ0bDFAZ21haWwuY29tIiwidG9rZW5UeXBlIjoiQXBwbGljYXRpb25fVG9rZW4iLCJ1c2VySWQiOiJBZ2VuY3lVc2VyMTA0Iiwic3ViIjoidnRsMUBnbWFpbC5jb20iLCJpYXQiOjE3Njc2OTc2NTgsImV4cCI6MTc2NzcxMjA1OH0.Ej7ZKXbFmaKXATU2lh9Sipja5c04pM1J9eakHfGL6jLAZp6cMGNDcKxZ1eLcceIH5cVYU33yqJajL5EbE4ofTQ",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n   \"checkSubId\":\"225\",\r\n    \"checkId\":\"ED0X7TL2\",\r\n\"tenantId\":\"2510\",\r\n\"caseReferenceNumber\":\"INFO-2510-0170\",\r\n\"userId\":\"AgencyUser109\"\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Deployement}}/credOps-api/agency/Verification/userAssignmentForVerification",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "agency",
+            "Verification",
+            "userAssignmentForVerification"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "verificationComplete",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlSWQiOiJSb2xlSWQxMTYiLCJhZ2VuY3lJZCI6IjMwMzAiLCJ1c2VyTmFtZSI6InZ0bTFAZ21haWwuY29tIiwidG9rZW5UeXBlIjoiQXBwbGljYXRpb25fVG9rZW4iLCJ1c2VySWQiOiJBZ2VuY3lVc2VyMTA5Iiwic3ViIjoidnRtMUBnbWFpbC5jb20iLCJpYXQiOjE3Njc2OTc4NzEsImV4cCI6MTc2NzcxMjI3MX0.dU3CTOq9zWJL_6xmPgM7nWJLP_j8NzB3LBqM2E1ZQqpjquZNc4X5Z6Xn6jrJtpZ2EOJ4P24uTfkvhPbjDX2ojg",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"checkSubId\":\"232\",\r\n    \"checkId\":\"#ED0X7TL2\",\r\n    \"tenantId\": \"2510\",\r\n    \"caseReferenceNumber\": \"INFO-2510-0178\",\r\n    \"checkDataFromRHS\":\"string\",\r\n    \"remark\":\"good\",\r\n    \"status\":\"Complete\", // Complete/Insufficiency / QC Complete\r\n    \"dispositionStatus\":\"Closed As Insufficiency\"\r\n\r\n\r\n\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Deployement}}/credOps-api/agency/Verification/verificationComplete",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "agency",
+            "Verification",
+            "verificationComplete"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateCheckAsQcComplete",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlSWQiOiJSb2xlSWQxMTciLCJhZ2VuY3lJZCI6IjMwMzAiLCJ1c2VyTmFtZSI6InF0bUBnbWFpbC5jb20iLCJ0b2tlblR5cGUiOiJBcHBsaWNhdGlvbl9Ub2tlbiIsInVzZXJJZCI6IkFnZW5jeVVzZXIxMDYiLCJzdWIiOiJxdG1AZ21haWwuY29tIiwiaWF0IjoxNzY3Njk5NjEwLCJleHAiOjE3Njc3MTQwMTB9.gj8x8zYB1bfnSaEIyqotFZK3oWsBNc2NEaNKMhCHq5tqvqbLv-zfepRm9ZnOoUlEXTpg-aludzeuhsM9pREuxA",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"checkSubId\":\"228\",\r\n    \"checkId\":\"ED0X7TL2\",\r\n    \"tenantId\": \"2510\",\r\n    \"caseReferenceNumber\": \"INFO-2510-0172\",\r\n    \"checkDataFromRHS\":\"string\",\r\n    \"remark\":\"good\",\r\n    \"status\":\"QC Complete\",\r\n    \"dispositionStatus\":\"Closed As Insufficiency\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Deployement}}/credOps-api/agency/Verification/updateCheckAsQcStatus",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "agency",
+            "Verification",
+            "updateCheckAsQcStatus"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Check Level CAM",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlSWQiOiJSb2xlSWQxMTkiLCJhZ2VuY3lJZCI6IjMwMzAiLCJ1c2VyTmFtZSI6ImNhbUBnbWFpbC5jb20iLCJ0b2tlblR5cGUiOiJBcHBsaWNhdGlvbl9Ub2tlbiIsInVzZXJJZCI6IkFnZW5jeVVzZXIxMDgiLCJzdWIiOiJjYW1AZ21haWwuY29tIiwiaWF0IjoxNzY3NzY1MDM0LCJleHAiOjE3Njc3Nzk0MzR9.QpiP6U7mYWsNwBzxaGbsilu7ORfFdRYBDBpOlZNQws3JmII73Ez1nP5lfnlhriZYb9CVx-U4FS_mvteMePtRBQ",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n     \"checkSubId\":\"230\",\r\n    \"checkId\":\"ED0X7TL2\",\r\n    \"tenantId\": \"2510\",\r\n    \"caseReferenceNumber\": \"INFO-2510-0175\",\r\n    \"reportStatus\":\"Rejected\",  //Rejected , Approved\r\n    \"dispositionStatus\":\"Closed As Insufficiency\",\r\n    \"remark\":\"Good\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Deployement}}/credOps-api/agencies/report/updateReportStatus",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "agencies",
+            "report",
+            "updateReportStatus"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "RWM",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlSWQiOiJSb2xlSWQxMTgiLCJhZ2VuY3lJZCI6IjMwMzAiLCJ1c2VyTmFtZSI6InJ3bUBnbWFpbC5jb20iLCJ0b2tlblR5cGUiOiJBcHBsaWNhdGlvbl9Ub2tlbiIsInVzZXJJZCI6IkFnZW5jeVVzZXIxMDciLCJzdWIiOiJyd21AZ21haWwuY29tIiwiaWF0IjoxNzY3NzAyNDAyLCJleHAiOjE3Njc3MTY4MDJ9.AQVvMRaspc9C2UmQnruJgcdcZ1-Uo_1pVZRZjCqzGqGr62rtMtNx6pPCpxj-Ylx3dCdrOc-aBw8RypCDf81cyw",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "reportData",
+              "value": "{\n  \"tenantId\": \"2510\",\n  \"caseReferenceNumber\": \"INFO-2510-0172\",\n  \"agencyId\": \"3030\",\n  \"reportName\": \"CVTPL_DILI_2526_001.pdf\",\n  \"reportType\": \"FR\",\n  \"createdBy\": \"Agency_User-189\"\n}",
+              "type": "text"
+            },
+            {
+              "key": "file",
+              "type": "file",
+              "src": "/C:/Users/Software Engineer/Downloads/Untitled document (2).pdf"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{Deployement}}/credOps-api/agencies/report/submit",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "agencies",
+            "report",
+            "submit"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "New Request",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzUxMiJ9.eyJhZ2VuY3lJZCI6IjMwMDQiLCJ1c2VyTmFtZSI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsInRva2VuVHlwZSI6IkFwcGxpY2F0aW9uX1Rva2VuIiwidXNlcklkIjoiQWdlbmN5X1VzZXItNSIsInN1YiI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsImlhdCI6MTc2NDA3MjMzNiwiZXhwIjoxNzY0MDg2NzM2fQ.96ZpeomKk6dXBlcjunyx0Yg9hDIQ7-6z6pegsabPV4DJRq2x1vzTTQVEUI3Ws4KbwawNKlG4Sa_eQdGB-l2e2Q",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "reportData",
+                  "value": "{\n  \"tenantId\": \"2510\",\n  \"caseReferenceNumber\": \"INFO-2510-0001\",\n  \"agencyId\": \"3004\",\n  \"reportName\": \"CVTPL_DILI_2526_001.pdf\",\n  \"reportType\": \"FR\",\n  \"createdBy\": \"Agency_User-189\"\n}",
+                  "type": "text"
+                },
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": [
+                    "/C:/Users/mail2/Downloads/Invoice-5118631-WiFi bill  (1) (1) (1).pdf"
+                  ]
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{urlForCredops}}/agencies/report/submit",
+              "host": [
+                "{{urlForCredops}}"
+              ],
+              "path": [
+                "agencies",
+                "report",
+                "submit"
+              ]
+            }
+          },
+          "status": "Internal Server Error",
+          "code": 500,
+          "_postman_previewlanguage": "Text",
+          "header": [
+            {
+              "key": "Vary",
+              "value": "Origin"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Method"
+            },
+            {
+              "key": "Vary",
+              "value": "Access-Control-Request-Headers"
+            },
+            {
+              "key": "X-Content-Type-Options",
+              "value": "nosniff"
+            },
+            {
+              "key": "X-XSS-Protection",
+              "value": "0"
+            },
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, no-store, max-age=0, must-revalidate"
+            },
+            {
+              "key": "Pragma",
+              "value": "no-cache"
+            },
+            {
+              "key": "Expires",
+              "value": "0"
+            },
+            {
+              "key": "X-Frame-Options",
+              "value": "DENY"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json;charset=ISO-8859-1"
+            },
+            {
+              "key": "Content-Length",
+              "value": "179"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 25 Nov 2025 14:42:01 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\"error\":\"Unexpected error\",\"message\":\"Request processing failed: java.lang.NullPointerException: Cannot invoke \"java.util.List.size()\" because \"competencyListDocuments\" is null\"}"
+        }
+      ]
+    },
+    {
+      "name": "finalReportStatusUpdate",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlSWQiOiJSb2xlSWQxMTkiLCJhZ2VuY3lJZCI6IjMwMzAiLCJ1c2VyTmFtZSI6ImNhbUBnbWFpbC5jb20iLCJ0b2tlblR5cGUiOiJBcHBsaWNhdGlvbl9Ub2tlbiIsInVzZXJJZCI6IkFnZW5jeVVzZXIxMDgiLCJzdWIiOiJjYW1AZ21haWwuY29tIiwiaWF0IjoxNzY3NzAyMDIzLCJleHAiOjE3Njc3MTY0MjN9.C0NGiIrSE5afZp_ZR4wisF8ci80gOtUnkrlG8A8Z_IRvb3XhnpYpU-264wxEPvpjcoinSnnRklRmrrhWNbMUUw",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"tenantId\": \"2510\",\r\n    \"caseReferenceNumber\": \"INFO-2510-0172\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Deployement}}/credOps-api/agencies/report/finalReportStatusUpdate",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "agencies",
+            "report",
+            "finalReportStatusUpdate"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateCheckStatusAsInsufficiencyRaised",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlSWQiOiJSb2xlSWQxMTYiLCJhZ2VuY3lJZCI6IjMwMzAiLCJ1c2VyTmFtZSI6InZ0bTFAZ21haWwuY29tIiwidG9rZW5UeXBlIjoiQXBwbGljYXRpb25fVG9rZW4iLCJ1c2VySWQiOiJBZ2VuY3lVc2VyMTA5Iiwic3ViIjoidnRtMUBnbWFpbC5jb20iLCJpYXQiOjE3NjU4NjQyODEsImV4cCI6MTc2NTg3ODY4MX0.y9AK6_Lfp22L6qHxq6iHoZJNeaXwmcjbpOJ5YdCcNVcHYMO6a2OfTkx5nMJMc57WeMR2s64avABpWLQPFXq-Wg",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"checkSubId\":\"082\",\r\n    \"checkId\":\"FMCG70PB\",\r\n    \"tenantId\": \"2510\",\r\n    \"caseReferenceNumber\": \"INFO-2510-0063\",\r\n    \"insuffRaiseRemark\":\"not good\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Deployement}}/agency/Verification/updateCheckStatusAsInsufficiencyRaised",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "agency",
+            "Verification",
+            "updateCheckStatusAsInsufficiencyRaised"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "updateCheckAsQcComplete",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlSWQiOiJSb2xlSWQxMTciLCJhZ2VuY3lJZCI6IjMwMzAiLCJ1c2VyTmFtZSI6InF0bUBnbWFpbC5jb20iLCJ0b2tlblR5cGUiOiJBcHBsaWNhdGlvbl9Ub2tlbiIsInVzZXJJZCI6IkFnZW5jeVVzZXIxMDYiLCJzdWIiOiJxdG1AZ21haWwuY29tIiwiaWF0IjoxNzY1Nzk3MzA3LCJleHAiOjE3NjU4MTE3MDd9.wYyQRO5_AL5k8BE8Zn-wMmd5dG-465ejAZV7YL1nFn4vpR-Ocxirv3aQahbCdM2W86aOp-F9TJ24_1XZgIIAUw",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"checkSubId\": \"074\",\r\n    \"checkId\": \"FMCG70PB\",\r\n    \"tenantId\": \"2510\",\r\n    \"caseReferenceNumber\": \"INFO-2510-0055\",\r\n    \"remark\":\"good\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Deployement}}/agency/Verification/updateCheckAsQcComplete",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "agency",
+            "Verification",
+            "updateCheckAsQcComplete"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ReportWritingMember Copy",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlSWQiOiJSb2xlSWQxMTgiLCJhZ2VuY3lJZCI6IjMwMzAiLCJ1c2VyTmFtZSI6InJ3bUBnbWFpbC5jb20iLCJ0b2tlblR5cGUiOiJBcHBsaWNhdGlvbl9Ub2tlbiIsInVzZXJJZCI6IkFnZW5jeVVzZXIxMDciLCJzdWIiOiJyd21AZ21haWwuY29tIiwiaWF0IjoxNzY2NDc4OTkwLCJleHAiOjE3NjY0OTMzOTB9.IeRphqDxgSLp8f8ozCHQW2g3nxrsfzo-c0oCduSE2mPPHbOK429SDvaXZfF4SqFVQHqJIuxMUj6lS9vq_HLNFg",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n   \"checkSubId\": \"142\",\r\n  \"checkId\": \"address\",\r\n  \"tenantId\": \"2510\",\r\n  \"caseReferenceNumber\": \"INFO-2510-0109\",\r\n  \"reportStatus\": \"Approved\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Deployement}}/credOps-api/agencies/report/updateReportStatus",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "agencies",
+            "report",
+            "updateReportStatus"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "ReportWritingMember Copy 2",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlSWQiOiJSb2xlSWQxMTgiLCJhZ2VuY3lJZCI6IjMwMzAiLCJ1c2VyTmFtZSI6InJ3bUBnbWFpbC5jb20iLCJ0b2tlblR5cGUiOiJBcHBsaWNhdGlvbl9Ub2tlbiIsInVzZXJJZCI6IkFnZW5jeVVzZXIxMDciLCJzdWIiOiJyd21AZ21haWwuY29tIiwiaWF0IjoxNzY2NDc4OTkwLCJleHAiOjE3NjY0OTMzOTB9.IeRphqDxgSLp8f8ozCHQW2g3nxrsfzo-c0oCduSE2mPPHbOK429SDvaXZfF4SqFVQHqJIuxMUj6lS9vq_HLNFg",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n   \"checkSubId\": \"142\",\r\n  \"checkId\": \"address\",\r\n  \"tenantId\": \"2510\",\r\n  \"caseReferenceNumber\": \"INFO-2510-0109\",\r\n  \"reportStatus\": \"Approved\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{Deployement}}/credOps-api/agencies/report/updateReportStatus",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "agencies",
+            "report",
+            "updateReportStatus"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

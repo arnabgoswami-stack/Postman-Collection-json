@@ -1,0 +1,399 @@
+{
+  "info": {
+    "_postman_id": "d16331ee-1a2a-4f7e-85a1-e5c08ae05c24",
+    "name": "User API's For Camunda",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "49422711",
+    "_collection_link": "https://go.postman.co/collection/49422711-d16331ee-1a2a-4f7e-85a1-e5c08ae05c24?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Create User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJhZ2VuY3lJZCI6IjMwMDQiLCJ1c2VyTmFtZSI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsInRva2VuVHlwZSI6IkFwcGxpY2F0aW9uX1Rva2VuIiwidXNlcklkIjoiQWdlbmN5X1VzZXItNSIsInN1YiI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsImlhdCI6MTc2MzAyODAxNCwiZXhwIjoxNzYzMDQyNDE0fQ.KurZYSCRYTFXuNXpPJQBhy5mKwp17potYcWPCSdzM4jDvlMxM6JlkQpBbl-7HWuHTSTo0tXKl8eRpgdB_GURiQ",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"userId\": \"pqr\",\r\n    \"password\": \"demo\",\r\n    \"repeatPassword\": \"demo\",\r\n    \"firstName\": \"pqr\",\r\n    \"lastName\": \"stu\",\r\n    \"email\": \"pqr@verify.com\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credOps-api/bpmn/users/createUser",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "bpmn",
+            "users",
+            "createUser"
+          ]
+        },
+        "description": "Generated from cURL: curl --location --request POST 'http://localhost:9095/bpmn/users' \\\r\n--header 'Content-Type: application/json' \\\r\n--data-raw '{\r\n    \"userId\": \"user123\",\r\n    \"password\": \"password123\",\r\n    \"repeatPassword\": \"password123\",\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"johndoe@example.com\"\r\n}'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "getUserbyID",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"userId\": \"om\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credOps-api/bpmn/users/getUser",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "bpmn",
+            "users",
+            "getUser"
+          ]
+        },
+        "description": "Generated from cURL: curl --location --request GET 'http://localhost:9095/bpmn/users/get?userId=ram' \\\r\n--header 'Content-Type: application/json'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "getAllUsers",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://{{Deployement}}/credOps-api/bpmn/users/getAllUsers",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "bpmn",
+            "users",
+            "getAllUsers"
+          ]
+        },
+        "description": "Generated from cURL: curl --location 'http://localhost:9095/bpmn/users/getAllUsers' \\\r\n--header 'Content-Type: application/json'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "deleteUser",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJhZ2VuY3lJZCI6IjMwMDQiLCJ1c2VyTmFtZSI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsInRva2VuVHlwZSI6IkFwcGxpY2F0aW9uX1Rva2VuIiwidXNlcklkIjoiQWdlbmN5X1VzZXItNSIsInN1YiI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsImlhdCI6MTc2MzAzMDYwMiwiZXhwIjoxNzYzMDQ1MDAyfQ.bq0hC-pG3eQDfV1vKntC52OhcbRURO-OzCNKQoh1miIYWntc2cIsJbe45nKfRTLfbLI6DuM71It4ftv6DZx9hg",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"userId\": \"abc\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credOps-api/bpmn/users/deleteUser",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "bpmn",
+            "users",
+            "deleteUser"
+          ]
+        },
+        "description": "Generated from cURL: curl --location --request DELETE 'http://localhost:9095/bpmn/users/delete?userId=ram' \\\r\n--header 'Content-Type: application/json'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "assignUserToTenant",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJhZ2VuY3lJZCI6IjMwMDQiLCJ1c2VyTmFtZSI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsInRva2VuVHlwZSI6IkFwcGxpY2F0aW9uX1Rva2VuIiwidXNlcklkIjoiQWdlbmN5X1VzZXItNSIsInN1YiI6InZpbmF5LmJoYWRhdXJpYUB0cmFuc3BhcmVuY3l0ZXN0LmNvbSIsImlhdCI6MTc2MzAzMDYwMiwiZXhwIjoxNzYzMDQ1MDAyfQ.bq0hC-pG3eQDfV1vKntC52OhcbRURO-OzCNKQoh1miIYWntc2cIsJbe45nKfRTLfbLI6DuM71It4ftv6DZx9hg",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"userId\": \"pqr\",\r\n    \"tenantId\": \"tenant121\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credOps-api/bpmn/users/userAssignToTenant",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "bpmn",
+            "users",
+            "userAssignToTenant"
+          ]
+        },
+        "description": "Generated from cURL: curl --location --request POST 'http://localhost:9095/bpmn/users/assignToTenant' \\\r\n--header 'Content-Type: application/json' \\\r\n--data-raw '{\r\n    \"userId\": \"om\",\r\n    \"tenantId\": \"tenant123\"\r\n}'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "Create User Copy",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"userId\": \"ram\",\r\n    \"password\": \"demo\",\r\n    \"repeatPassword\": \"demo\",\r\n    \"firstName\": \"ram\",\r\n    \"lastName\": \"laxman\",\r\n    \"email\": \"ram@laxman.com\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credflow/bpmn/users",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credflow",
+            "bpmn",
+            "users"
+          ]
+        },
+        "description": "Generated from cURL: curl --location --request POST 'http://localhost:9095/bpmn/users' \\\r\n--header 'Content-Type: application/json' \\\r\n--data-raw '{\r\n    \"userId\": \"user123\",\r\n    \"password\": \"password123\",\r\n    \"repeatPassword\": \"password123\",\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"johndoe@example.com\"\r\n}'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "getUserbyID Copy",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://{{Deployement}}/credflow/bpmn/users/get?userId=ram",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credflow",
+            "bpmn",
+            "users",
+            "get"
+          ],
+          "query": [
+            {
+              "key": "userId",
+              "value": "ram"
+            }
+          ]
+        },
+        "description": "Generated from cURL: curl --location --request GET 'http://localhost:9095/bpmn/users/get?userId=ram' \\\r\n--header 'Content-Type: application/json'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "getAllUsers Copy",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://{{Deployement}}/credflow/bpmn/users/getAllUsers",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credflow",
+            "bpmn",
+            "users",
+            "getAllUsers"
+          ]
+        },
+        "description": "Generated from cURL: curl --location 'http://localhost:9095/bpmn/users/getAllUsers' \\\r\n--header 'Content-Type: application/json'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "deleteUser Copy",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://{{Deployement}}/credflow/bpmn/users/delete?userId=ram",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credflow",
+            "bpmn",
+            "users",
+            "delete"
+          ],
+          "query": [
+            {
+              "key": "userId",
+              "value": "ram"
+            }
+          ]
+        },
+        "description": "Generated from cURL: curl --location --request DELETE 'http://localhost:9095/bpmn/users/delete?userId=ram' \\\r\n--header 'Content-Type: application/json'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "assignUserToTenant Copy",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"userId\": \"cred\",\r\n    \"tenantId\": \"tenant122\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credflow/bpmn/users/assignToTenant",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credflow",
+            "bpmn",
+            "users",
+            "assignToTenant"
+          ]
+        },
+        "description": "Generated from cURL: curl --location --request POST 'http://localhost:9095/bpmn/users/assignToTenant' \\\r\n--header 'Content-Type: application/json' \\\r\n--data-raw '{\r\n    \"userId\": \"om\",\r\n    \"tenantId\": \"tenant123\"\r\n}'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "UserTaskList",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "eyJhbGciOiJIUzUxMiJ9.eyJhZ2VuY3lJZCI6IjMwMDkiLCJ1c2VyTmFtZSI6ImJoYWd3YXQuYmFua2FyQGJoYWd3YXRzb2x1dGlvbjEwMS5jb20iLCJ0b2tlblR5cGUiOiJBcHBsaWNhdGlvbl9Ub2tlbiIsInVzZXJJZCI6IkFnZW5jeV9Vc2VyMTciLCJzdWIiOiJiaGFnd2F0LmJhbmthckBiaGFnd2F0c29sdXRpb24xMDEuY29tIiwiaWF0IjoxNzYzNDUyODI5LCJleHAiOjE3NjM0NjcyMjl9.GQGufZonu07L8S-k40VNsAp9tEOeIlt59sOou3szoOifLk5apvWJJtI7aVBqMmLdT3yu_oxQRpWaTs8qGGnUBA",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://{{Deployement}}/credOps-api/bpmn/tasks/assignedToUser?userId=demo",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credOps-api",
+            "bpmn",
+            "tasks",
+            "assignedToUser"
+          ],
+          "query": [
+            {
+              "key": "userId",
+              "value": "demo"
+            }
+          ]
+        },
+        "description": "Generated from cURL: curl --location 'http://{{Deployement}}/credOps-api/bpmn/tasks/assignedToUser?userId=om' \\\r\n--header 'Content-Type: application/json'\r\n"
+      },
+      "response": []
+    }
+  ]
+}

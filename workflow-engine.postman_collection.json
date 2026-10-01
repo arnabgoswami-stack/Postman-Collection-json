@@ -1,0 +1,951 @@
+{
+  "info": {
+    "_postman_id": "54988eeb-14f2-459e-a8d7-83ab482bf73b",
+    "name": "workflow-engine",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "49422711",
+    "_collection_link": "https://go.postman.co/collection/49422711-54988eeb-14f2-459e-a8d7-83ab482bf73b?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "deploy-process",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": "/C:/Users/saias/Downloads/messageProcess.bpmn"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:9090/api/camunda-deployment/deploy",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "api",
+            "camunda-deployment",
+            "deploy"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "start-process",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:9090/api/camunda-deployment/start/Message",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "api",
+            "camunda-deployment",
+            "start",
+            "Message"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get-all-process",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9090/api/camunda-deployment/workflows",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "api",
+            "camunda-deployment",
+            "workflows"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "gat-by-id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9090/api/camunda-deployment/workflows/Message:12:e6e4ef3e-9ad5-11f0-b3be-183d2dd0a665",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "api",
+            "camunda-deployment",
+            "workflows",
+            "Message:12:e6e4ef3e-9ad5-11f0-b3be-183d2dd0a665"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "update-by-key",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<bpmn:definitions xmlns:bpmn=\"http://www.omg.org/spec/BPMN/20100524/MODEL\" xmlns:bpmndi=\"http://www.omg.org/spec/BPMN/20100524/DI\" xmlns:dc=\"http://www.omg.org/spec/DD/20100524/DC\" xmlns:camunda=\"http://camunda.org/schema/1.0/bpmn\" xmlns:di=\"http://www.omg.org/spec/DD/20100524/DI\" xmlns:modeler=\"http://camunda.org/schema/modeler/1.0\" id=\"Definitions_0hg7doj\" targetNamespace=\"http://bpmn.io/schema/bpmn\" exporter=\"Camunda Modeler\" exporterVersion=\"5.39.0\" modeler:executionPlatform=\"Camunda Platform\" modeler:executionPlatformVersion=\"7.23.0\">\r\n  <bpmn:process id=\"Message\" name=\"Message\" isExecutable=\"true\" camunda:historyTimeToLive=\"30\">\r\n    <bpmn:startEvent id=\"StartEvent_1\">\r\n      <bpmn:outgoing>Flow_0tf4n8h</bpmn:outgoing>\r\n    </bpmn:startEvent>\r\n    <bpmn:endEvent id=\"Event_16jqi4l\">\r\n      <bpmn:incoming>Flow_1qimpxp</bpmn:incoming>\r\n    </bpmn:endEvent>\r\n    <bpmn:sequenceFlow id=\"Flow_0tf4n8h\" sourceRef=\"StartEvent_1\" targetRef=\"Activity_06ade61\" />\r\n    <bpmn:serviceTask id=\"Activity_06ade61\" name=\"Message\" camunda:class=\"com.camunda.delegates.MessagePrinter\">\r\n      <bpmn:incoming>Flow_0tf4n8h</bpmn:incoming>\r\n      <bpmn:outgoing>Flow_1qimpxp</bpmn:outgoing>\r\n    </bpmn:serviceTask>\r\n    <bpmn:sequenceFlow id=\"Flow_1qimpxp\" sourceRef=\"Activity_06ade61\" targetRef=\"Event_16jqi4l\" />\r\n  </bpmn:process>\r\n  <bpmndi:BPMNDiagram id=\"BPMNDiagram_1\">\r\n    <bpmndi:BPMNPlane id=\"BPMNPlane_1\" bpmnElement=\"Message\">\r\n      <bpmndi:BPMNShape id=\"StartEvent_1_di\" bpmnElement=\"StartEvent_1\">\r\n        <dc:Bounds x=\"182\" y=\"102\" width=\"36\" height=\"36\" />\r\n      </bpmndi:BPMNShape>\r\n      <bpmndi:BPMNShape id=\"Event_16jqi4l_di\" bpmnElement=\"Event_16jqi4l\">\r\n        <dc:Bounds x=\"582\" y=\"102\" width=\"36\" height=\"36\" />\r\n      </bpmndi:BPMNShape>\r\n      <bpmndi:BPMNShape id=\"Activity_1epb23y_di\" bpmnElement=\"Activity_06ade61\">\r\n        <dc:Bounds x=\"330\" y=\"80\" width=\"100\" height=\"80\" />\r\n        <bpmndi:BPMNLabel />\r\n      </bpmndi:BPMNShape>\r\n      <bpmndi:BPMNEdge id=\"Flow_0tf4n8h_di\" bpmnElement=\"Flow_0tf4n8h\">\r\n        <di:waypoint x=\"218\" y=\"120\" />\r\n        <di:waypoint x=\"330\" y=\"120\" />\r\n      </bpmndi:BPMNEdge>\r\n      <bpmndi:BPMNEdge id=\"Flow_1qimpxp_di\" bpmnElement=\"Flow_1qimpxp\">\r\n        <di:waypoint x=\"430\" y=\"120\" />\r\n        <di:waypoint x=\"582\" y=\"120\" />\r\n      </bpmndi:BPMNEdge>\r\n    </bpmndi:BPMNPlane>\r\n  </bpmndi:BPMNDiagram>\r\n</bpmn:definitions>\r\n",
+          "options": {
+            "raw": {
+              "language": "text"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:9090/api/camunda-deployment/update?key=Message",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "api",
+            "camunda-deployment",
+            "update"
+          ],
+          "query": [
+            {
+              "key": "key",
+              "value": "Message"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "deploy-process-by-XML",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<bpmn:definitions xmlns:bpmn=\"http://www.omg.org/spec/BPMN/20100524/MODEL\" xmlns:bpmndi=\"http://www.omg.org/spec/BPMN/20100524/DI\" xmlns:dc=\"http://www.omg.org/spec/DD/20100524/DC\" xmlns:camunda=\"http://camunda.org/schema/1.0/bpmn\" xmlns:di=\"http://www.omg.org/spec/DD/20100524/DI\" xmlns:modeler=\"http://camunda.org/schema/modeler/1.0\" id=\"Definitions_0hg7doj\" targetNamespace=\"http://bpmn.io/schema/bpmn\" exporter=\"Camunda Modeler\" exporterVersion=\"5.39.0\" modeler:executionPlatform=\"Camunda Platform\" modeler:executionPlatformVersion=\"7.23.0\">\r\n  <bpmn:process id=\"Message\" name=\"Message\" isExecutable=\"true\" camunda:historyTimeToLive=\"30\">\r\n    <bpmn:startEvent id=\"StartEvent_1\">\r\n      <bpmn:outgoing>Flow_0tf4n8h</bpmn:outgoing>\r\n    </bpmn:startEvent>\r\n    <bpmn:endEvent id=\"Event_16jqi4l\">\r\n      <bpmn:incoming>Flow_1qimpxp</bpmn:incoming>\r\n    </bpmn:endEvent>\r\n    <bpmn:sequenceFlow id=\"Flow_0tf4n8h\" sourceRef=\"StartEvent_1\" targetRef=\"Activity_06ade61\" />\r\n    <bpmn:serviceTask id=\"Activity_06ade61\" name=\"Message\" camunda:class=\"com.camunda.delegates.MessagePrinter\">\r\n      <bpmn:incoming>Flow_0tf4n8h</bpmn:incoming>\r\n      <bpmn:outgoing>Flow_1qimpxp</bpmn:outgoing>\r\n    </bpmn:serviceTask>\r\n    <bpmn:sequenceFlow id=\"Flow_1qimpxp\" sourceRef=\"Activity_06ade61\" targetRef=\"Event_16jqi4l\" />\r\n  </bpmn:process>\r\n  <bpmndi:BPMNDiagram id=\"BPMNDiagram_1\">\r\n    <bpmndi:BPMNPlane id=\"BPMNPlane_1\" bpmnElement=\"Message\">\r\n      <bpmndi:BPMNShape id=\"StartEvent_1_di\" bpmnElement=\"StartEvent_1\">\r\n        <dc:Bounds x=\"182\" y=\"102\" width=\"36\" height=\"36\" />\r\n      </bpmndi:BPMNShape>\r\n      <bpmndi:BPMNShape id=\"Event_16jqi4l_di\" bpmnElement=\"Event_16jqi4l\">\r\n        <dc:Bounds x=\"582\" y=\"102\" width=\"36\" height=\"36\" />\r\n      </bpmndi:BPMNShape>\r\n      <bpmndi:BPMNShape id=\"Activity_1epb23y_di\" bpmnElement=\"Activity_06ade61\">\r\n        <dc:Bounds x=\"330\" y=\"80\" width=\"100\" height=\"80\" />\r\n        <bpmndi:BPMNLabel />\r\n      </bpmndi:BPMNShape>\r\n      <bpmndi:BPMNEdge id=\"Flow_0tf4n8h_di\" bpmnElement=\"Flow_0tf4n8h\">\r\n        <di:waypoint x=\"218\" y=\"120\" />\r\n        <di:waypoint x=\"330\" y=\"120\" />\r\n      </bpmndi:BPMNEdge>\r\n      <bpmndi:BPMNEdge id=\"Flow_1qimpxp_di\" bpmnElement=\"Flow_1qimpxp\">\r\n        <di:waypoint x=\"430\" y=\"120\" />\r\n        <di:waypoint x=\"582\" y=\"120\" />\r\n      </bpmndi:BPMNEdge>\r\n    </bpmndi:BPMNPlane>\r\n  </bpmndi:BPMNDiagram>\r\n</bpmn:definitions>\r\n",
+          "options": {
+            "raw": {
+              "language": "text"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:9090/api/camunda-deployment/deployXml?id=messageProcess",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "api",
+            "camunda-deployment",
+            "deployXml"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "messageProcess"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:8080/api/camunda-deployment/user",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\":\"Sai\",\r\n    \"age\":26\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/camunda-deployment/user",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "camunda-deployment",
+            "user"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:9090/engine-rest/process-definition/key/Message/start",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:9090/engine-rest/process-definition/key/Message/start",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "engine-rest",
+            "process-definition",
+            "key",
+            "Message",
+            "start"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:9090/engine-rest/deployment",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9090/engine-rest/deployment",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "engine-rest",
+            "deployment"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:9090/engine-rest/process-definition/Message:1:7d9a1c1b-91e7-11f0-ba4e-183d2dd0a665?cascade=true",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9090/engine-rest/process-definition/Message:1:7d9a1c1b-91e7-11f0-ba4e-183d2dd0a665?cascade=true",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "engine-rest",
+            "process-definition",
+            "Message:1:7d9a1c1b-91e7-11f0-ba4e-183d2dd0a665"
+          ],
+          "query": [
+            {
+              "key": "cascade",
+              "value": "true"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:9090/api/camunda-deployment/start/Message",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:9090/api/camunda-deployment/start/Message",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "api",
+            "camunda-deployment",
+            "start",
+            "Message"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": ""
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:9090/camunda/api/engine/engine/default/task/819ec98f-ae4c-11f0-8fa2-da8083ffdb3f",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Cookie",
+            "value": "JSESSIONID=BB27306D727F5BD649B5F23322E6A180"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:9090/camunda/api/engine/engine/default/task/819ec98f-ae4c-11f0-8fa2-da8083ffdb3f",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "camunda",
+            "api",
+            "engine",
+            "engine",
+            "default",
+            "task",
+            "819ec98f-ae4c-11f0-8fa2-da8083ffdb3f"
+          ]
+        },
+        "description": "Generated from cURL: curl --location 'http://localhost:9090/camunda/api/engine/engine/default/task/819ec98f-ae4c-11f0-8fa2-da8083ffdb3f' \\\r\n--header 'Cookie: JSESSIONID=BB27306D727F5BD649B5F23322E6A180'"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Task Form",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/hal+json, application/json; q=0.5"
+          },
+          {
+            "key": "Accept-Encoding",
+            "value": "gzip, deflate, br, zstd"
+          },
+          {
+            "key": "Accept-Language",
+            "value": "en-US,en;q=0.9"
+          },
+          {
+            "key": "Connection",
+            "value": "keep-alive"
+          },
+          {
+            "key": "Cookie",
+            "value": "XSRF-TOKEN=213AC2C0853C73F5F3C8B39C6D63EDD1; JSESSIONID=677403BCCEEA41FD2AAA28A28741004E"
+          },
+          {
+            "key": "Referer",
+            "value": "http://localhost:9090/camunda/app/tasklist/default/"
+          },
+          {
+            "key": "User-Agent",
+            "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
+          },
+          {
+            "key": "X-XSRF-TOKEN",
+            "value": "213AC2C0853C73F5F3C8B39C6D63EDD1"
+          },
+          {
+            "key": "sec-ch-ua",
+            "value": "\"Google Chrome\";v=\"141\", \"Not?A_Brand\";v=\"8\", \"Chromium\";v=\"141\""
+          },
+          {
+            "key": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "key": "sec-ch-ua-platform",
+            "value": "\"Windows\""
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:9090/camunda/api/engine/engine/default/task/d3d5796e-ae68-11f0-94d6-da8083ffdb3f",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9090",
+          "path": [
+            "camunda",
+            "api",
+            "engine",
+            "engine",
+            "default",
+            "task",
+            "d3d5796e-ae68-11f0-94d6-da8083ffdb3f"
+          ]
+        },
+        "description": "Generated from cURL: curl -X GET \"http://localhost:9090/camunda/api/engine/engine/default/task/d3d5796e-ae68-11f0-94d6-da8083ffdb3f\" \\\r\n  -H \"Accept: application/hal+json, application/json; q=0.5\" \\\r\n  -H \"Accept-Encoding: gzip, deflate, br, zstd\" \\\r\n  -H \"Accept-Language: en-US,en;q=0.9\" \\\r\n  -H \"Connection: keep-alive\" \\\r\n  -H \"Cookie: XSRF-TOKEN=213AC2C0853C73F5F3C8B39C6D63EDD1; JSESSIONID=677403BCCEEA41FD2AAA28A28741004E\" \\\r\n  -H \"Referer: http://localhost:9090/camunda/app/tasklist/default/\" \\\r\n  -H \"User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36\" \\\r\n  -H \"X-XSRF-TOKEN: 213AC2C0853C73F5F3C8B39C6D63EDD1\" \\\r\n  -H \"sec-ch-ua: \\\"Google Chrome\\\";v=\\\"141\\\", \\\"Not?A_Brand\\\";v=\\\"8\\\", \\\"Chromium\\\";v=\\\"141\\\"\" \\\r\n  -H \"sec-ch-ua-mobile: ?0\" \\\r\n  -H \"sec-ch-ua-platform: \\\"Windows\\\"\"\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "SaveBPMN2",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n        \"diagramName\": \"Employee Onboarding Process\",\r\n        \"bpmnXml\": \"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?><bpmn:definitions id=\\\"Def_1\\\" xmlns:bpmn=\\\"http://www.omg.org/spec/BPMN/20100524/MODEL\\\"><bpmn:process id=\\\"Process_1\\\" name=\\\"Sample Process\\\" isExecutable=\\\"true\\\"><bpmn:startEvent id=\\\"StartEvent_1\\\" name=\\\"Start\\\"/><bpmn:endEvent id=\\\"EndEvent_1\\\" name=\\\"End\\\"/></bpmn:process></bpmn:definitions>\"\r\n      }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:9095/credops/bpmn/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9095",
+          "path": [
+            "credops",
+            "bpmn",
+            "save"
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST \"http://localhost:9095/credops/bpmn/save\" \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -d '{\r\n        \"diagramName\": \"Employee Onboarding Process\",\r\n        \"bpmnXml\": \"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?><bpmn:definitions id=\\\"Def_1\\\" xmlns:bpmn=\\\"http://www.omg.org/spec/BPMN/20100524/MODEL\\\"><bpmn:process id=\\\"Process_1\\\" name=\\\"Sample Process\\\" isExecutable=\\\"true\\\"><bpmn:startEvent id=\\\"StartEvent_1\\\" name=\\\"Start\\\"/><bpmn:endEvent id=\\\"EndEvent_1\\\" name=\\\"End\\\"/></bpmn:process></bpmn:definitions>\"\r\n      }'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "GetBPMNbyID",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:9095/credops/bpmn/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9095",
+          "path": [
+            "credops",
+            "bpmn",
+            "1"
+          ]
+        },
+        "description": "Generated from cURL: curl -X GET \"http://localhost:9095/credops/bpmn/1\" \\\r\n  -H \"Accept: application/json\"\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "GetMetaDataByID",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:9095/credops/bpmn/metadata/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9095",
+          "path": [
+            "credops",
+            "bpmn",
+            "metadata",
+            "1"
+          ]
+        },
+        "description": "Generated from cURL: curl -X GET \"http://localhost:9095/credops/bpmn/metadata/1\" \\\r\n  -H \"Accept: application/json\"\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "BPMN Save",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"diagramName\": \"CandidateVerificationFlow\",\r\n  \"bpmnXml\": \"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?><bpmn:definitions id=\\\"Def_1\\\"></bpmn:definitions>\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:9095/credops/bpmn/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9095",
+          "path": [
+            "credops",
+            "bpmn",
+            "save"
+          ]
+        },
+        "description": "Generated from cURL: curl --location 'http://localhost:9095/credops/bpmn/save' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n  \"diagramName\": \"CandidateVerificationFlow\",\r\n  \"bpmnXml\": \"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?><bpmn:definitions id=\\\"Def_1\\\"></bpmn:definitions>\"\r\n}'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "GetAll BPMN",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9095/credflow/credops/bpmn/all",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9095",
+          "path": [
+            "credflow",
+            "credops",
+            "bpmn",
+            "all"
+          ]
+        },
+        "description": "Generated from cURL: curl --location 'http://localhost:9095/credflow/credops/bpmn/all'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "GetBpmnByName",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://your-api-endpoint/credops/bpmn/getBpmn?diagramName=Trial_1",
+          "protocol": "http",
+          "host": [
+            "your-api-endpoint"
+          ],
+          "path": [
+            "credops",
+            "bpmn",
+            "getBpmn"
+          ],
+          "query": [
+            {
+              "key": "diagramName",
+              "value": "Trial_1"
+            }
+          ]
+        },
+        "description": "Generated from cURL: curl -X GET \"http://your-api-endpoint/credops/bpmn/getBpmn?diagramName=Trial_1\"\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "NewDeployServer",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/plain"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<bpmn:definitions xmlns:bpmn=\"http://www.omg.org/spec/BPMN/20100524/MODEL\" xmlns:bpmndi=\"http://www.omg.org/spec/BPMN/20100524/DI\" xmlns:dc=\"http://www.omg.org/spec/DD/20100524/DC\" xmlns:camunda=\"http://camunda.org/schema/1.0/bpmn\" xmlns:di=\"http://www.omg.org/spec/DD/20100524/DI\" xmlns:modeler=\"http://camunda.org/schema/modeler/1.0\" id=\"Definitions_10x2ecm\" targetNamespace=\"http://bpmn.io/schema/bpmn\" exporter=\"Camunda Modeler\" exporterVersion=\"5.39.0\" modeler:executionPlatform=\"Camunda Platform\" modeler:executionPlatformVersion=\"7.23.0\">\n  <bpmn:process id=\"Process_0t0ww5b\" isExecutable=\"true\" camunda:historyTimeToLive=\"5\">\n    <bpmn:startEvent id=\"StartEvent_1\">\n      <bpmn:outgoing>Flow_037eeqs</bpmn:outgoing>\n    </bpmn:startEvent>\n    <bpmn:task id=\"Activity_1ct66an\">\n      <bpmn:incoming>Flow_037eeqs</bpmn:incoming>\n      <bpmn:outgoing>Flow_0s1fql4</bpmn:outgoing>\n    </bpmn:task>\n    <bpmn:sequenceFlow id=\"Flow_037eeqs\" sourceRef=\"StartEvent_1\" targetRef=\"Activity_1ct66an\" />\n    <bpmn:endEvent id=\"Event_0p6c2he\">\n      <bpmn:incoming>Flow_0s1fql4</bpmn:incoming>\n    </bpmn:endEvent>\n    <bpmn:sequenceFlow id=\"Flow_0s1fql4\" sourceRef=\"Activity_1ct66an\" targetRef=\"Event_0p6c2he\" />\n  </bpmn:process>\n  <bpmndi:BPMNDiagram id=\"BPMNDiagram_1\">\n    <bpmndi:BPMNPlane id=\"BPMNPlane_1\" bpmnElement=\"Process_0t0ww5b\">\n      <bpmndi:BPMNShape id=\"StartEvent_1_di\" bpmnElement=\"StartEvent_1\">\n        <dc:Bounds x=\"182\" y=\"102\" width=\"36\" height=\"36\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNShape id=\"Activity_1ct66an_di\" bpmnElement=\"Activity_1ct66an\">\n        <dc:Bounds x=\"270\" y=\"80\" width=\"100\" height=\"80\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNShape id=\"Event_0p6c2he_di\" bpmnElement=\"Event_0p6c2he\">\n        <dc:Bounds x=\"422\" y=\"102\" width=\"36\" height=\"36\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNEdge id=\"Flow_037eeqs_di\" bpmnElement=\"Flow_037eeqs\">\n        <di:waypoint x=\"218\" y=\"120\" />\n        <di:waypoint x=\"270\" y=\"120\" />\n      </bpmndi:BPMNEdge>\n      <bpmndi:BPMNEdge id=\"Flow_0s1fql4_di\" bpmnElement=\"Flow_0s1fql4\">\n        <di:waypoint x=\"370\" y=\"120\" />\n        <di:waypoint x=\"422\" y=\"120\" />\n      </bpmndi:BPMNEdge>\n    </bpmndi:BPMNPlane>\n  </bpmndi:BPMNDiagram>\n</bpmn:definitions>\n",
+          "options": {
+            "raw": {
+              "language": "text"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credflow/api/camunda-deployment/deployXml?id=Process_0t0ww5b",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credflow",
+            "api",
+            "camunda-deployment",
+            "deployXml"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "Process_0t0ww5b"
+            }
+          ]
+        },
+        "description": "Generated from cURL: curl --location 'http://{{Deployement}}/credflow/api/camunda-deployment/deployXml?id=Process_0t0ww5b' \\\n--header 'Content-Type: text/plain' \\\n--data '<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<bpmn:definitions xmlns:bpmn=\"http://www.omg.org/spec/BPMN/20100524/MODEL\" xmlns:bpmndi=\"http://www.omg.org/spec/BPMN/20100524/DI\" xmlns:dc=\"http://www.omg.org/spec/DD/20100524/DC\" xmlns:camunda=\"http://camunda.org/schema/1.0/bpmn\" xmlns:di=\"http://www.omg.org/spec/DD/20100524/DI\" xmlns:modeler=\"http://camunda.org/schema/modeler/1.0\" id=\"Definitions_10x2ecm\" targetNamespace=\"http://bpmn.io/schema/bpmn\" exporter=\"Camunda Modeler\" exporterVersion=\"5.39.0\" modeler:executionPlatform=\"Camunda Platform\" modeler:executionPlatformVersion=\"7.23.0\">\n  <bpmn:process id=\"Process_0t0ww5b\" isExecutable=\"true\" camunda:historyTimeToLive=\"5\">\n    <bpmn:startEvent id=\"StartEvent_1\">\n      <bpmn:outgoing>Flow_037eeqs</bpmn:outgoing>\n    </bpmn:startEvent>\n    <bpmn:task id=\"Activity_1ct66an\">\n      <bpmn:incoming>Flow_037eeqs</bpmn:incoming>\n      <bpmn:outgoing>Flow_0s1fql4</bpmn:outgoing>\n    </bpmn:task>\n    <bpmn:sequenceFlow id=\"Flow_037eeqs\" sourceRef=\"StartEvent_1\" targetRef=\"Activity_1ct66an\" />\n    <bpmn:endEvent id=\"Event_0p6c2he\">\n      <bpmn:incoming>Flow_0s1fql4</bpmn:incoming>\n    </bpmn:endEvent>\n    <bpmn:sequenceFlow id=\"Flow_0s1fql4\" sourceRef=\"Activity_1ct66an\" targetRef=\"Event_0p6c2he\" />\n  </bpmn:process>\n  <bpmndi:BPMNDiagram id=\"BPMNDiagram_1\">\n    <bpmndi:BPMNPlane id=\"BPMNPlane_1\" bpmnElement=\"Process_0t0ww5b\">\n      <bpmndi:BPMNShape id=\"StartEvent_1_di\" bpmnElement=\"StartEvent_1\">\n        <dc:Bounds x=\"182\" y=\"102\" width=\"36\" height=\"36\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNShape id=\"Activity_1ct66an_di\" bpmnElement=\"Activity_1ct66an\">\n        <dc:Bounds x=\"270\" y=\"80\" width=\"100\" height=\"80\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNShape id=\"Event_0p6c2he_di\" bpmnElement=\"Event_0p6c2he\">\n        <dc:Bounds x=\"422\" y=\"102\" width=\"36\" height=\"36\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNEdge id=\"Flow_037eeqs_di\" bpmnElement=\"Flow_037eeqs\">\n        <di:waypoint x=\"218\" y=\"120\" />\n        <di:waypoint x=\"270\" y=\"120\" />\n      </bpmndi:BPMNEdge>\n      <bpmndi:BPMNEdge id=\"Flow_0s1fql4_di\" bpmnElement=\"Flow_0s1fql4\">\n        <di:waypoint x=\"370\" y=\"120\" />\n        <di:waypoint x=\"422\" y=\"120\" />\n      </bpmndi:BPMNEdge>\n    </bpmndi:BPMNPlane>\n  </bpmndi:BPMNDiagram>\n</bpmn:definitions>\n'"
+      },
+      "response": []
+    },
+    {
+      "name": "NewDeployServer Copy",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "text/plain"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<bpmn:definitions xmlns:bpmn=\"http://www.omg.org/spec/BPMN/20100524/MODEL\" xmlns:bpmndi=\"http://www.omg.org/spec/BPMN/20100524/DI\" xmlns:dc=\"http://www.omg.org/spec/DD/20100524/DC\" xmlns:camunda=\"http://camunda.org/schema/1.0/bpmn\" xmlns:di=\"http://www.omg.org/spec/DD/20100524/DI\" xmlns:modeler=\"http://camunda.org/schema/modeler/1.0\" id=\"Definitions_10x2ecm\" targetNamespace=\"http://bpmn.io/schema/bpmn\" exporter=\"Camunda Modeler\" exporterVersion=\"5.39.0\" modeler:executionPlatform=\"Camunda Platform\" modeler:executionPlatformVersion=\"7.23.0\">\n  <bpmn:process id=\"Process_0t0ww5b\" isExecutable=\"true\" camunda:historyTimeToLive=\"5\">\n    <bpmn:startEvent id=\"StartEvent_1\">\n      <bpmn:outgoing>Flow_037eeqs</bpmn:outgoing>\n    </bpmn:startEvent>\n    <bpmn:task id=\"Activity_1ct66an\">\n      <bpmn:incoming>Flow_037eeqs</bpmn:incoming>\n      <bpmn:outgoing>Flow_0s1fql4</bpmn:outgoing>\n    </bpmn:task>\n    <bpmn:sequenceFlow id=\"Flow_037eeqs\" sourceRef=\"StartEvent_1\" targetRef=\"Activity_1ct66an\" />\n    <bpmn:endEvent id=\"Event_0p6c2he\">\n      <bpmn:incoming>Flow_0s1fql4</bpmn:incoming>\n    </bpmn:endEvent>\n    <bpmn:sequenceFlow id=\"Flow_0s1fql4\" sourceRef=\"Activity_1ct66an\" targetRef=\"Event_0p6c2he\" />\n  </bpmn:process>\n  <bpmndi:BPMNDiagram id=\"BPMNDiagram_1\">\n    <bpmndi:BPMNPlane id=\"BPMNPlane_1\" bpmnElement=\"Process_0t0ww5b\">\n      <bpmndi:BPMNShape id=\"StartEvent_1_di\" bpmnElement=\"StartEvent_1\">\n        <dc:Bounds x=\"182\" y=\"102\" width=\"36\" height=\"36\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNShape id=\"Activity_1ct66an_di\" bpmnElement=\"Activity_1ct66an\">\n        <dc:Bounds x=\"270\" y=\"80\" width=\"100\" height=\"80\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNShape id=\"Event_0p6c2he_di\" bpmnElement=\"Event_0p6c2he\">\n        <dc:Bounds x=\"422\" y=\"102\" width=\"36\" height=\"36\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNEdge id=\"Flow_037eeqs_di\" bpmnElement=\"Flow_037eeqs\">\n        <di:waypoint x=\"218\" y=\"120\" />\n        <di:waypoint x=\"270\" y=\"120\" />\n      </bpmndi:BPMNEdge>\n      <bpmndi:BPMNEdge id=\"Flow_0s1fql4_di\" bpmnElement=\"Flow_0s1fql4\">\n        <di:waypoint x=\"370\" y=\"120\" />\n        <di:waypoint x=\"422\" y=\"120\" />\n      </bpmndi:BPMNEdge>\n    </bpmndi:BPMNPlane>\n  </bpmndi:BPMNDiagram>\n</bpmn:definitions>\n",
+          "options": {
+            "raw": {
+              "language": "text"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://{{Deployement}}/credflow/api/camunda-deployment/deployXml?id=Process_0t0ww5b",
+          "protocol": "http",
+          "host": [
+            "{{Deployement}}"
+          ],
+          "path": [
+            "credflow",
+            "api",
+            "camunda-deployment",
+            "deployXml"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "Process_0t0ww5b"
+            }
+          ]
+        },
+        "description": "Generated from cURL: curl --location 'http://{{Deployement}}/credflow/api/camunda-deployment/deployXml?id=Process_0t0ww5b' \\\n--header 'Content-Type: text/plain' \\\n--data '<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<bpmn:definitions xmlns:bpmn=\"http://www.omg.org/spec/BPMN/20100524/MODEL\" xmlns:bpmndi=\"http://www.omg.org/spec/BPMN/20100524/DI\" xmlns:dc=\"http://www.omg.org/spec/DD/20100524/DC\" xmlns:camunda=\"http://camunda.org/schema/1.0/bpmn\" xmlns:di=\"http://www.omg.org/spec/DD/20100524/DI\" xmlns:modeler=\"http://camunda.org/schema/modeler/1.0\" id=\"Definitions_10x2ecm\" targetNamespace=\"http://bpmn.io/schema/bpmn\" exporter=\"Camunda Modeler\" exporterVersion=\"5.39.0\" modeler:executionPlatform=\"Camunda Platform\" modeler:executionPlatformVersion=\"7.23.0\">\n  <bpmn:process id=\"Process_0t0ww5b\" isExecutable=\"true\" camunda:historyTimeToLive=\"5\">\n    <bpmn:startEvent id=\"StartEvent_1\">\n      <bpmn:outgoing>Flow_037eeqs</bpmn:outgoing>\n    </bpmn:startEvent>\n    <bpmn:task id=\"Activity_1ct66an\">\n      <bpmn:incoming>Flow_037eeqs</bpmn:incoming>\n      <bpmn:outgoing>Flow_0s1fql4</bpmn:outgoing>\n    </bpmn:task>\n    <bpmn:sequenceFlow id=\"Flow_037eeqs\" sourceRef=\"StartEvent_1\" targetRef=\"Activity_1ct66an\" />\n    <bpmn:endEvent id=\"Event_0p6c2he\">\n      <bpmn:incoming>Flow_0s1fql4</bpmn:incoming>\n    </bpmn:endEvent>\n    <bpmn:sequenceFlow id=\"Flow_0s1fql4\" sourceRef=\"Activity_1ct66an\" targetRef=\"Event_0p6c2he\" />\n  </bpmn:process>\n  <bpmndi:BPMNDiagram id=\"BPMNDiagram_1\">\n    <bpmndi:BPMNPlane id=\"BPMNPlane_1\" bpmnElement=\"Process_0t0ww5b\">\n      <bpmndi:BPMNShape id=\"StartEvent_1_di\" bpmnElement=\"StartEvent_1\">\n        <dc:Bounds x=\"182\" y=\"102\" width=\"36\" height=\"36\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNShape id=\"Activity_1ct66an_di\" bpmnElement=\"Activity_1ct66an\">\n        <dc:Bounds x=\"270\" y=\"80\" width=\"100\" height=\"80\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNShape id=\"Event_0p6c2he_di\" bpmnElement=\"Event_0p6c2he\">\n        <dc:Bounds x=\"422\" y=\"102\" width=\"36\" height=\"36\" />\n      </bpmndi:BPMNShape>\n      <bpmndi:BPMNEdge id=\"Flow_037eeqs_di\" bpmnElement=\"Flow_037eeqs\">\n        <di:waypoint x=\"218\" y=\"120\" />\n        <di:waypoint x=\"270\" y=\"120\" />\n      </bpmndi:BPMNEdge>\n      <bpmndi:BPMNEdge id=\"Flow_0s1fql4_di\" bpmnElement=\"Flow_0s1fql4\">\n        <di:waypoint x=\"370\" y=\"120\" />\n        <di:waypoint x=\"422\" y=\"120\" />\n      </bpmndi:BPMNEdge>\n    </bpmndi:BPMNPlane>\n  </bpmndi:BPMNDiagram>\n</bpmn:definitions>\n'"
+      },
+      "response": []
+    },
+    {
+      "name": "DeployTenantSpecific",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"tenantId\": \"3002\",\r\n  \"bpmnXml\": \"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?><bpmn:definitions xmlns:bpmn=\\\"http://www.omg.org/spec/BPMN/20100524/MODEL\\\" ... </bpmn:definitions>\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:9095/credflow/credops/bpmn/deployProcess",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9095",
+          "path": [
+            "credflow",
+            "credops",
+            "bpmn",
+            "deployProcess"
+          ]
+        },
+        "description": "Generated from cURL: curl --location 'http://localhost:9095/credflow/credops/bpmn/deployProcess' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n  \"tenantId\": \"Tenant_1\",\r\n  \"bpmnXml\": \"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?><bpmn:definitions xmlns:bpmn=\\\"http://www.omg.org/spec/BPMN/20100524/MODEL\\\" ... </bpmn:definitions>\"\r\n}'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "SatrtTenantSpecificProcess",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"processKey\": \"your_process_key\",\r\n  \"tenantId\": \"3002\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:9095/credflow/credops/bpmn/startProcess",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9095",
+          "path": [
+            "credflow",
+            "credops",
+            "bpmn",
+            "startProcess"
+          ]
+        },
+        "description": "Generated from cURL: curl --location 'http://localhost:9095/credflow/credops/bpmn/startProcess' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n  \"processKey\": \"your_process_key\",\r\n  \"tenantId\": \"3002\"\r\n}'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "StartProcess",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:9095/credflow/credops/bpmn/startProcess?processKey=Process_1t2wr0j&tenantId=3002",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9095",
+          "path": [
+            "credflow",
+            "credops",
+            "bpmn",
+            "startProcess"
+          ],
+          "query": [
+            {
+              "key": "processKey",
+              "value": "Process_1t2wr0j"
+            },
+            {
+              "key": "tenantId",
+              "value": "3002"
+            }
+          ]
+        },
+        "description": "Generated from cURL: curl --location 'http://localhost:9095/credflow/credops/bpmn/startProcess?processKey=your_process_key&tenantId=3002'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "StartProcess 2",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"processKey\": \"Process_1t2wr0j\", \"tenantId\": \"3002\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:9095/credflow/credops/bpmn/startProcess",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9095",
+          "path": [
+            "credflow",
+            "credops",
+            "bpmn",
+            "startProcess"
+          ]
+        },
+        "description": "Generated from cURL: curl --location 'http://localhost:9095/credflow/credops/bpmn/startProcess' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\"processKey\": \"Process_1t2wr0j\", \"tenantId\": \"3002\"}'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "GetLatestDiagram",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/credops/bpmn/getLatest?agencyId=12345&diagramName=Process_1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "credops",
+            "bpmn",
+            "getLatest"
+          ],
+          "query": [
+            {
+              "key": "agencyId",
+              "value": "12345"
+            },
+            {
+              "key": "diagramName",
+              "value": "Process_1"
+            }
+          ]
+        },
+        "description": "Generated from cURL: curl --location --request GET 'http://localhost:8080/credops/bpmn/getLatest?agencyId=12345&diagramName=Process_1'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "Save/Update",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"agencyId\": \"3002\",\r\n    \"diagramName\": \"Process_1\",\r\n    \"bpmnXml\": \"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n<bpmn:definitions xmlns:bpmn=\\\"http://www.omg.org/spec/BPMN/20100524/MODEL\\\" xmlns:bpmndi=\\\"http://www.omg.org/spec/BPMN/20100524/DI\\\" xmlns:dc=\\\"http://www.omg.org/spec/DD/20100524/DC\\\" xmlns:camunda=\\\"http://camunda.org/schema/1.0/bpmn\\\" xmlns:di=\\\"http://www.omg.org/spec/DD/20100524/DI\\\" xmlns:modeler=\\\"http://camunda.org/schema/modeler/1.0\\\" id=\\\"Definitions_0tghu9p\\\" targetNamespace=\\\"http://bpmn.io/schema/bpmn\\\" exporter=\\\"Camunda Modeler\\\" exporterVersion=\\\"5.39.0\\\" modeler:executionPlatform=\\\"Camunda Platform\\\" modeler:executionPlatformVersion=\\\"7.23.0\\\">\\n  <bpmn:process id=\\\"Process_1t2wr0j\\\" name=\\\"Teast1\\\" isExecutable=\\\"true\\\" camunda:historyTimeToLive=\\\"1\\\">\\n    <bpmn:startEvent id=\\\"StartEvent_1\\\">\\n      <bpmn:outgoing>Flow_1xyut8v</bpmn:outgoing>\\n    </bpmn:startEvent>\\n    <bpmn:sequenceFlow id=\\\"Flow_1xyut8v\\\" sourceRef=\\\"StartEvent_1\\\" targetRef=\\\"Activity_0apuvsn\\\" />\\n    <bpmn:endEvent id=\\\"Event_1pygnno\\\">\\n      <bpmn:incoming>Flow_1hexbq9</bpmn:incoming>\\n    </bpmn:endEvent>\\n    <bpmn:sequenceFlow id=\\\"Flow_1hexbq9\\\" sourceRef=\\\"Activity_0apuvsn\\\" targetRef=\\\"Event_1pygnno\\\" />\\n    <bpmn:userTask id=\\\"Activity_0apuvsn\\\" name=\\\"Tenant 1\\\" camunda:assignee=\\\"demo1\\\">\\n      <bpmn:extensionElements>\\n        <camunda:formData>\\n          <camunda:formField id=\\\"Name\\\" label=\\\"Name\\\" type=\\\"string\\\" />\\n        </camunda:formData>\\n      </bpmn:extensionElements>\\n      <bpmn:incoming>Flow_1xyut8v</bpmn:incoming>\\n      <bpmn:outgoing>Flow_1hexbq9</bpmn:outgoing>\\n    </bpmn:userTask>\\n  </bpmn:process>\\n  <bpmndi:BPMNDiagram id=\\\"BPMNDiagram_1\\\">\\n    <bpmndi:BPMNPlane id=\\\"BPMNPlane_1\\\" bpmnElement=\\\"Process_1t2wr0j\\\">\\n      <bpmndi:BPMNShape id=\\\"StartEvent_1_di\\\" bpmnElement=\\\"StartEvent_1\\\">\\n        <dc:Bounds x=\\\"182\\\" y=\\\"82\\\" width=\\\"36\\\" height=\\\"36\\\" />\\n      </bpmndi:BPMNShape>\\n      <bpmndi:BPMNShape id=\\\"Event_1pygnno_di\\\" bpmnElement=\\\"Event_1pygnno\\\">\\n        <dc:Bounds x=\\\"442\\\" y=\\\"82\\\" width=\\\"36\\\" height=\\\"36\\\" />\\n      </bpmndi:BPMNShape>\\n      <bpmndi:BPMNShape id=\\\"Activity_0mvithd_di\\\" bpmnElement=\\\"Activity_0apuvsn\\\">\\n        <dc:Bounds x=\\\"280\\\" y=\\\"60\\\" width=\\\"100\\\" height=\\\"80\\\" />\\n        <bpmndi:BPMNLabel />\\n      </bpmndi:BPMNShape>\\n      <bpmndi:BPMNEdge id=\\\"Flow_1xyut8v_di\\\" bpmnElement=\\\"Flow_1xyut8v\\\">\\n        <di:waypoint x=\\\"218\\\" y=\\\"100\\\" />\\n        <di:waypoint x=\\\"280\\\" y=\\\"100\\\" />\\n      </bpmndi:BPMNEdge>\\n      <bpmndi:BPMNEdge id=\\\"Flow_1hexbq9_di\\\" bpmnElement=\\\"Flow_1hexbq9\\\">\\n        <di:waypoint x=\\\"380\\\" y=\\\"100\\\" />\\n        <di:waypoint x=\\\"442\\\" y=\\\"100\\\" />\\n      </bpmndi:BPMNEdge>\\n    </bpmndi:BPMNPlane>\\n  </bpmndi:BPMNDiagram>\\n</bpmn:definitions>\",\r\n    \"updatedBy\": \"admin\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:9095/your-api-path/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "9095",
+          "path": [
+            "your-api-path",
+            "save"
+          ]
+        },
+        "description": "Generated from cURL: curl --location --request POST 'http://localhost:9095/your-api-path/save' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n    \"agencyId\": \"3002\",\r\n    \"diagramName\": \"Process_1\",\r\n    \"bpmnXml\": \"<?xml version=\\\"1.0\\\" encoding=\\\"UTF-8\\\"?>\\n<bpmn:definitions xmlns:bpmn=\\\"http://www.omg.org/spec/BPMN/20100524/MODEL\\\" xmlns:bpmndi=\\\"http://www.omg.org/spec/BPMN/20100524/DI\\\" xmlns:dc=\\\"http://www.omg.org/spec/DD/20100524/DC\\\" xmlns:camunda=\\\"http://camunda.org/schema/1.0/bpmn\\\" xmlns:di=\\\"http://www.omg.org/spec/DD/20100524/DI\\\" xmlns:modeler=\\\"http://camunda.org/schema/modeler/1.0\\\" id=\\\"Definitions_0tghu9p\\\" targetNamespace=\\\"http://bpmn.io/schema/bpmn\\\" exporter=\\\"Camunda Modeler\\\" exporterVersion=\\\"5.39.0\\\" modeler:executionPlatform=\\\"Camunda Platform\\\" modeler:executionPlatformVersion=\\\"7.23.0\\\">\\n  <bpmn:process id=\\\"Process_1t2wr0j\\\" name=\\\"Teast1\\\" isExecutable=\\\"true\\\" camunda:historyTimeToLive=\\\"1\\\">\\n    <bpmn:startEvent id=\\\"StartEvent_1\\\">\\n      <bpmn:outgoing>Flow_1xyut8v</bpmn:outgoing>\\n    </bpmn:startEvent>\\n    <bpmn:sequenceFlow id=\\\"Flow_1xyut8v\\\" sourceRef=\\\"StartEvent_1\\\" targetRef=\\\"Activity_0apuvsn\\\" />\\n    <bpmn:endEvent id=\\\"Event_1pygnno\\\">\\n      <bpmn:incoming>Flow_1hexbq9</bpmn:incoming>\\n    </bpmn:endEvent>\\n    <bpmn:sequenceFlow id=\\\"Flow_1hexbq9\\\" sourceRef=\\\"Activity_0apuvsn\\\" targetRef=\\\"Event_1pygnno\\\" />\\n    <bpmn:userTask id=\\\"Activity_0apuvsn\\\" name=\\\"Tenant 1\\\" camunda:assignee=\\\"demo1\\\">\\n      <bpmn:extensionElements>\\n        <camunda:formData>\\n          <camunda:formField id=\\\"Name\\\" label=\\\"Name\\\" type=\\\"string\\\" />\\n        </camunda:formData>\\n      </bpmn:extensionElements>\\n      <bpmn:incoming>Flow_1xyut8v</bpmn:incoming>\\n      <bpmn:outgoing>Flow_1hexbq9</bpmn:outgoing>\\n    </bpmn:userTask>\\n  </bpmn:process>\\n  <bpmndi:BPMNDiagram id=\\\"BPMNDiagram_1\\\">\\n    <bpmndi:BPMNPlane id=\\\"BPMNPlane_1\\\" bpmnElement=\\\"Process_1t2wr0j\\\">\\n      <bpmndi:BPMNShape id=\\\"StartEvent_1_di\\\" bpmnElement=\\\"StartEvent_1\\\">\\n        <dc:Bounds x=\\\"182\\\" y=\\\"82\\\" width=\\\"36\\\" height=\\\"36\\\" />\\n      </bpmndi:BPMNShape>\\n      <bpmndi:BPMNShape id=\\\"Event_1pygnno_di\\\" bpmnElement=\\\"Event_1pygnno\\\">\\n        <dc:Bounds x=\\\"442\\\" y=\\\"82\\\" width=\\\"36\\\" height=\\\"36\\\" />\\n      </bpmndi:BPMNShape>\\n      <bpmndi:BPMNShape id=\\\"Activity_0mvithd_di\\\" bpmnElement=\\\"Activity_0apuvsn\\\">\\n        <dc:Bounds x=\\\"280\\\" y=\\\"60\\\" width=\\\"100\\\" height=\\\"80\\\" />\\n        <bpmndi:BPMNLabel />\\n      </bpmndi:BPMNShape>\\n      <bpmndi:BPMNEdge id=\\\"Flow_1xyut8v_di\\\" bpmnElement=\\\"Flow_1xyut8v\\\">\\n        <di:waypoint x=\\\"218\\\" y=\\\"100\\\" />\\n        <di:waypoint x=\\\"280\\\" y=\\\"100\\\" />\\n      </bpmndi:BPMNEdge>\\n      <bpmndi:BPMNEdge id=\\\"Flow_1hexbq9_di\\\" bpmnElement=\\\"Flow_1hexbq9\\\">\\n        <di:waypoint x=\\\"380\\\" y=\\\"100\\\" />\\n        <di:waypoint x=\\\"442\\\" y=\\\"100\\\" />\\n      </bpmndi:BPMNEdge>\\n    </bpmndi:BPMNPlane>\\n  </bpmndi:BPMNDiagram>\\n</bpmn:definitions>\",\r\n    \"updatedBy\": \"admin\"\r\n}'\r\n"
+      },
+      "response": []
+    },
+    {
+      "name": "CreateTenant",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n           \"tenantId\": \"tenant-123\",\r\n           \"name\": \"Tenant 123\",\r\n           \"description\": \"This is a test tenant\"\r\n         }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/tenants",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "tenants"
+          ]
+        },
+        "description": "Generated from cURL: curl -X POST \"http://localhost:8080/api/tenants\" \\\r\n     -H \"Content-Type: application/json\" \\\r\n     -d '{\r\n           \"tenantId\": \"tenant-123\",\r\n           \"name\": \"Tenant 123\",\r\n           \"description\": \"This is a test tenant\"\r\n         }'\r\n"
+      },
+      "response": []
+    }
+  ]
+}
